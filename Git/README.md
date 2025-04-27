@@ -3,7 +3,7 @@ Q1: How do you initialize a new Git repository in a directory?
 
 
 Q2: What does the git status command do?
- _The git status command shows the current state of the working directory and staging area.
+ _ The git status command shows the current state of the working directory and staging area.
 
 Q3: How do you add a file to the staging area in Git?
 
