@@ -3,7 +3,8 @@
 
 
 2. What does the git status command do?
-The git status command shows the current state of the working directory and staging area.
+- The git status command shows the current state of the working directory and staging area.
+  >git status
 
 Q3: How do you add a file to the staging area in Git?
 
