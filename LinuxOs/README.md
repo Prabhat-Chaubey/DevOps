@@ -5,8 +5,10 @@ Add the user to the sudo group.
 
 Create a file myfile.txt.
 >touch myfile.txt/ vi myfile.txt
+
 Change ownership to devops_user.
 > sudo chown devops_user:devops_user myfile.txt
+
 Set permission rw-r--r--.
 >chmod 644 myfile.txt
 
@@ -17,5 +19,6 @@ Update the system.
 
 Change your system hostname to devops-lab.
 >sudo hostnamectl set-hostname devops-lab
+
 You can verify:
 >hostname
