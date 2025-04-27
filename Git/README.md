@@ -12,7 +12,7 @@
 Q4: What command would you use to commit your changes to the repository?
 - > git commit -m "Your commit message"
 
-  # Branching
+# Branching
 
 1. How do you create a new branch in Git?
 > git branch <branch_name>
