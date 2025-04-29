@@ -61,3 +61,17 @@
    docker stop container_name
    docker rm container_name
 ```
+
+# 6. Volume Sharing Between Containers
+ -  In Docker, volumes are used to persist data and share data between containers. One powerful feature is the ability for one container to reuse the volumes of another container using the `--volumes-from` flag.
+ -  `--volumes-from` allows a container to mount volumes from another container.
+   -
+      ```
+        docker run -it --volumes-from mypostgres alpine:3.17 sh
+    ```
+         
+    + `docker run` ->	Starts a new container
+    + `-it`	-> Interactive terminal
+    + `--volumes-from mypostgres`	-> Mounts all volumes from the running or stopped container mypostgres
+    + `alpine:3.17`	-> Uses the lightweight Alpine Linux image version 3.17
+    + `sh`	-> Opens a shell in the new container
