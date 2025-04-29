@@ -4,7 +4,6 @@
     -   
   ```
     docker run -v volume_name:/path/in/container my_image
-
   ```
 - When to Use:
   - Use when  you want Docker to manage your data storage.
