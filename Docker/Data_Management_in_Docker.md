@@ -67,11 +67,11 @@
  -  `--volumes-from` allows a container to mount volumes from another container.
    -
         ```
-                docker run -it --volumes-from mypostgres alpine:3.17 sh
+        docker run -it --volumes-from mypostgres alpine:3.17 sh
         ```
          
         + `docker run` ->	Starts a new container
         + `-it`	-> Interactive terminal
-    + `--volumes-from mypostgres`	-> Mounts all volumes from the running or stopped container mypostgres
-    + `alpine:3.17`	-> Uses the lightweight Alpine Linux image version 3.17
-    + `sh`	-> Opens a shell in the new container
+        + `--volumes-from mypostgres`	-> Mounts all volumes from the running or stopped container mypostgres
+        + `alpine:3.17`	-> Uses the lightweight Alpine Linux image version 3.17
+        + `sh`	-> Opens a shell in the new container
