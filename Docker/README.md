@@ -3,7 +3,7 @@
 ### 1. docker build
  - Builds a Docker image from a Dockerfile
     ```
-   docker build -t <image_name>:<tag> <path_to_dockerfile>
+     docker build -t <image_name>:<tag> <path_to_dockerfile>
     ```
    - `<image_name>` the name you want to give your image
    - `:<tag>` version or label for the image (e.g., v1.0, prod, debug)
@@ -12,14 +12,11 @@
 ### 2. docker run
 -  Runs a container from an image.
     ```
-   docker run [OPTIONS] <image_name>
-
+     docker run [OPTIONS] <image_name>
     ```
   - Example
     ```
-   docker run -d -p 5000:5000 myapp
-
-
+    docker run -d -p 5000:5000 myapp
     ```
    - `-d`  Detached mode (runs in background)
    - `-p` Port mapping (host:container)
