@@ -3,10 +3,12 @@
 '''
     # Use Alpine Linux 3.17 as base image
     FROM alpine:3.17
-
+  '''
+  '''
     # Install specific version of nginx
     RUN apk add --no-cache nginx=1.22.1-r1
-
+'''
+'''
     # Default command to run when container starts (optional)
     CMD ["nginx", "-g", "daemon off;"]
 '''
