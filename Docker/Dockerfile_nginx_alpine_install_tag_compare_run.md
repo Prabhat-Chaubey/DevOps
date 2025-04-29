@@ -1,17 +1,21 @@
 1.Create your own Dockerfile based on alpine:3.17 image and install nginx using the following command apk add nginx=1.22.1-r1.
-  Creating own Docker file :
-'''
+
+  - Creating own Docker file :
+```
     # Use Alpine Linux 3.17 as base image
     FROM alpine:3.17
-  '''
-  '''
+ ```
+
+ ```
     # Install specific version of nginx
     RUN apk add --no-cache nginx=1.22.1-r1
-'''
-'''
+
+```
+
+```
     # Default command to run when container starts (optional)
     CMD ["nginx", "-g", "daemon off;"]
-'''
+```
 
 2.Build it with docker build command with name my_own_image.
 3.Inspect history of this image after the building.
