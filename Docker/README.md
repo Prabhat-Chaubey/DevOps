@@ -2,7 +2,9 @@
 
 ### 1. docker build
  - Builds a Docker image from a Dockerfile
-    ```docker build -t <image_name>:<tag> <path_to_dockerfile>```
+    ```
+   docker build -t <image_name>:<tag> <path_to_dockerfile>
+    ```
    - `<image_name>` the name you want to give your image
    - `:<tag>` version or label for the image (e.g., v1.0, prod, debug)
    - `<path>`  the directory with your Dockerfile (usually .)
