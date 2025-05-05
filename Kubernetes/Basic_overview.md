@@ -85,6 +85,10 @@ Minikube is used to learn Kubernetes without connecting to cloud services.
 minikube start
 ```
 ```
+# Stop Minikube
+minikube stop
+```
+```
 # Delete Minikube cluster
 minikube delete
 ```
