@@ -161,4 +161,9 @@ minikube service my-nginix
 ```
 kubectl delete deployment my-app
 ```
+
+### List all service in Kubernetes cluster
+```
+kubectl get services
+```
 - This command lists all the services in your Kubernetes cluster. Services in Kubernetes provide a stable network endpoint for accessing a set of Pods (containers), and they can route traffic to the appropriate Pod(s) based on the service type (e.g., ClusterIP, NodePort, LoadBalancer, etc.).
