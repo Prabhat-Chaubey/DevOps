@@ -28,6 +28,26 @@ When we deploy Kubernetes, we get a cluster consisting of:
    - Run the actual containerized applications
 
 **Cluster**: A group of nodes (workers) managed by the master.
+### Listing Nodes
+ - To view all nodes in your Kubernetes cluster, you can use the
+ -  ```
+    kubectl get nodes
+    ```
+   - Command. Adding the -o wide option will give you more detailed information, such as the internal and external IP addresses of the nodes, the operating system image, the kernel version, and the container runtime version used on each node.
+
+### Describing a Node
+ - For a more detailed view of a specific node, use the
+ -  ```
+    kubectl describe node NODE_NAME
+    ```
+   - command. This provides additional information such as labels, annotations, taints, a list of running pods on that node, allocated resources, and recent events related to that node.
+
+### Draining a Node
+ - When you need to perform maintenance on a node (such as installing updates or software), it's best to first drain the node. Draining means safely evicting all the pods from the node so that it can be updated without affecting the workload. You can do this using the command
+ -  ```
+    kubectl drain NODE_NAME
+    ```
+
 
 ## Kubernetes Components
 
@@ -59,6 +79,8 @@ Key architectural elements:
 - Jobs, CronJobs
 - Custom Resource Definitions (CRD)
 - Helm
+## Namespaces in Kubernetes
+--
 
 ## PODs
 
