@@ -80,8 +80,58 @@ Key architectural elements:
 - Custom Resource Definitions (CRD)
 - Helm
 ## Namespaces in Kubernetes
+### What is a Namespace?
+A namespace in Kubernetes is a way to divide cluster resources between multiple virtual clusters. In simple terms, it's like having separate compartments or environments inside a single Kubernetes cluster. You can use namespaces to logically separate and manage different sets of resources, such as development, testing, and production environments.
+When you use 
+- ```
+  kubectl get namespaces
+  ```
+  you will typically see four default namespaces:
+-  + default – used when no other namespace is specified.
+-  + kube-system – used by Kubernetes system components.
+-  + kube-public – generally readable by all users.
+-  + kube-node-lease – used for node heartbeats.
+- Most user-created resources live in the default namespace unless you specify otherwise.
+ ### Why Use Namespaces?
+ Namespaces are useful for:
+ + Organizing resources into logical groups (e.g., all database-related resources in one namespace, monitoring tools in another).
++ Controlling access using role-based access control (RBAC).
++ Limiting resource usage by setting resource quotas (CPU, memory).
++ Improving clarity and manageability in large clusters with many components.
++ Over time, if all resources are created in the default namespace, it can become cluttered and difficult to manage. Using namespaces helps avoid this issue.
 
+### Creating a Namespace
+To create a namespace from the command line, use:
+- ```
+  kubectl create namespace my-namespace
+  ```
+You can also create a namespace using a configuration (YAML) file:
+- ```
+   apiVersion: v1
+    kind: Namespace
+   metadata:
+   name: my-namespace
+  ```
+then apply is using the :
+- ```
+  kubectl apply -f namespace.yaml
+  ```
+  Using Resources Within a Namespace
+When creating resources like ConfigMaps, Secrets, or Deployments, you can associate them with a namespace in two ways:
+Add the ```--namespace=my-namespace``` flag while applying the resource
 
+### Best Practices for Namespaces
+- Each namespace should have its own ConfigMaps and Secrets.
+- Some components in Kubernetes are global and not bound to a namespace. These include:
+   - Nodes
+   - Persistent Volumes
+### Making a Namespace the Default (Using kubens)
+- If you're working within a specific namespace frequently, it becomes repetitive to specify --namespace=my-namespace every time. Kubernetes doesn’t offer a built-in way to set a default namespace per session, but you can use a tool called kubens to make namespace switching easier.
+- Once installed, simply run ```kubens``` to list all namespaces, and use:
+- ```kubens my-namespace```
+- This command changes the current context to use my-namespace by default, so all subsequent kubectl commands will target that namespace unless otherwise specified.
+
+  
 ## PODs
 
 - Smallest unit in Kubernetes
