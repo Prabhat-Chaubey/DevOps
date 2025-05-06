@@ -138,6 +138,36 @@ Add the ```--namespace=my-namespace``` flag while applying the resource
 - An environment that runs containers inside itself
 - A Pod can contain one or more containers
 
+## 📦 ReplicaSet in Kubernetes
+
+A **ReplicaSet** is a Kubernetes controller that ensures a specified number of pod instances are running at all times in a cluster. It provides fault tolerance and scalability by maintaining pod replicas even if some fail or get deleted.
+
+---
+
+### ✅ Key Features
+
+- Ensures the **desired number of pod instances** are always running.
+- Automatically **replaces failed or deleted pods**.
+- Supports **scaling up/down** the number of pods.
+- Enhances **high availability**, **load balancing**, and **auto-recovery**.
+
+---
+
+### 🚀 Why Use ReplicaSets?
+
+| Feature        | Description                                                                 |
+|----------------|-----------------------------------------------------------------------------|
+| **Reliability** | Prevents application downtime by recreating failed pods.                   |
+| **Load Balancing** | Distributes incoming traffic across multiple pod instances.            |
+| **Scaling**     | Dynamically adjusts the number of pods based on demand or configuration.   |
+
+---
+
+### 🔁 Relationship with Other Kubernetes Resources
+
+```text
+Deployment → ReplicaSet → Pod(s)
+```
 ## Benefits of Kubernetes
 
 - Container Orchestration
