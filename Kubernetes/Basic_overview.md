@@ -80,7 +80,7 @@ Key architectural elements:
 - Custom Resource Definitions (CRD)
 - Helm
 ## Namespaces in Kubernetes
---
+
 
 ## PODs
 
