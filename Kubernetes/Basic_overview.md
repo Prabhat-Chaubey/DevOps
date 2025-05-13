@@ -456,3 +456,5 @@ kubectl apply -f ingress.yaml
 kubectl delete ingress <ingress-name>
 ```
 ### 📸 Diagram
+
+![Ingress Diagram](./assets/ingress_diagram.png)
