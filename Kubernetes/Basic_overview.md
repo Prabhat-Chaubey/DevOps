@@ -316,6 +316,11 @@ minikube status
 ```
 ### Create the Pod
 ```
+# Create stabd alone pods
+kubectl run my-ngnix --image=ngnix:latest
+```
+```
+# Create deployment
 kubectl create deployment my-ngnix --image=ngnix:latest
 ```
 ```
