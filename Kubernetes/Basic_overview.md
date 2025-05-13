@@ -394,3 +394,65 @@ kubectl delete deployment my-app
 kubectl get services
 ```
 - This command lists all the services in your Kubernetes cluster. Services in Kubernetes provide a stable network endpoint for accessing a set of Pods (containers), and they can route traffic to the appropriate Pod(s) based on the service type (e.g., ClusterIP, NodePort, LoadBalancer, etc.).
+
+---
+
+## 🌐 Kubernetes Ingress Guide
+
+Ingress is a powerful Kubernetes resource that manages external HTTP/S access to services within your cluster. Instead of exposing each service individually, you can use Ingress to centralize and simplify traffic routing.
+
+---
+
+### ✅ Purpose of Ingress
+
+In Kubernetes, **Ingress** is used to:
+- Manage **external access** to services (HTTP/HTTPS).
+- Route **incoming traffic** based on hostname or path.
+- Provide a **central point** for managing routing rules and TLS termination.
+
+---
+
+## 🧭 Key Features
+
+### 🌍 Expose Services to the Internet
+Ingress makes it easy to expose multiple internal services behind a single IP and domain.
+
+### 🔀 Routing Rules
+You can route traffic based on:
+- Hostnames (e.g., `api.example.com`)
+- Paths (e.g., `/api`, `/admin`)
+
+### ⚖️ Load Balancing
+Ingress controllers can distribute HTTP traffic across service pods.
+
+### 🧩 Centralized Traffic Management
+Configure all traffic-related rules (routing, TLS, etc.) in one place using the Ingress resource.
+
+---
+
+### 🛠️ Common `kubectl` Commands for Ingress
+
+### 1. ✅ Check All Ingress Resources
+```bash
+kubectl get ingress
+kubectl get ing             # shorthand
+kubectl get ing -A          # view across all namespaces
+```
+### 2. 🔍 Describe an Ingress Resource
+```bash
+kubectl describe ingress <ingress-name>
+```
+### 3. 📄 View Ingress as YAML
+```bash
+kubectl get ingress <ingress-name> -o yaml
+```
+### 4. 🆕 Create an Ingress from a YAML File
+```bash
+kubectl apply -f ingress.yaml
+```
+### 5. 🛑 Delete an Ingress
+
+```bash
+kubectl delete ingress <ingress-name>
+```
+### 📸 Diagram
