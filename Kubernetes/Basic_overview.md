@@ -611,3 +611,63 @@ A StorageClass defines how storage is provisioned in a Kubernetes cluster. It al
 2. User/app defines a PVC requesting storage (e.g., 5Gi).  
 3. Kubernetes binds the PVC to a matching PV.  
 4. The pod uses the PVC to mount the storage.
+
+---
+
+
+## 🔐 Kubernetes RBAC (Role-Based Access Control)
+
+RBAC (Role-Based Access Control) is a Kubernetes method for regulating access to resources based on the roles of individual users or applications within a cluster.
+
+---
+
+### ✅ Purpose of RBAC
+
+RBAC is used to define **who can do what** in your Kubernetes cluster. It allows fine-grained control over:
+
+- **Who** (user, group, or service account)
+- **Can perform what action** (get, list, create, delete, etc.)
+- **On which resource** (pods, services, secrets, etc.)
+- **In which namespace**
+
+---
+
+### 🧩 Core Components of RBAC
+
+| Component           | Description                                                       |
+|---------------------|-------------------------------------------------------------------|
+| `Role`              | Specifies permissions **within a namespace**.                     |
+| `ClusterRole`       | Specifies permissions **across the entire cluster**.              |
+| `RoleBinding`       | Grants a `Role` to a user/group/service account **within a namespace**. |
+| `ClusterRoleBinding`| Grants a `ClusterRole` to a user/group/service account **across namespaces**. |
+
+---
+
+### 🛡️ Benefits of RBAC
+
+- Enforces **least privilege** access
+- Supports **multi-tenant** security models
+- Separates concerns between **devs**, **ops**, and **apps**
+- Enhances **cluster security and auditability**
+
+---
+
+### 🔍 Difference Between RoleBinding and ClusterRoleBinding
+
+| Feature           | `RoleBinding`                                          | `ClusterRoleBinding`                                        |
+|-------------------|--------------------------------------------------------|--------------------------------------------------------------|
+| **Scope**         | Namespace-scoped                                       | Cluster-wide                                                 |
+| **Binds to**      | A `Role` or `ClusterRole` within a specific namespace  | A `ClusterRole` across all namespaces                        |
+| **Usage**         | Grants access **within a specific namespace only**     | Grants access **across the entire cluster**                  |
+| **Typical Use**   | For access to **only one namespace**                   | For access across **all namespaces**                         |
+
+### 🧠 **Key Rule**:
+- Use `RoleBinding` when access should be limited to a **single namespace**.
+- Use `ClusterRoleBinding` when access is needed across the **entire cluster**.
+
+---
+
+### ✅ Common Verbs in Kubernetes RBAC
+
+`get` ,`list`,`watch`,`create`,`update`,`patch`,`delete`,`deletecollection`,`impersonate`,`bind`,`escalate`,`use`
+
