@@ -458,3 +458,64 @@ kubectl delete ingress <ingress-name>
 ### 📸 Diagram
 
 ![Ingress Diagram](./assets/ingress_diagram.png)
+
+
+--- 
+
+## 🔧 Kubernetes ConfigMap vs 🔐 Secret
+
+Kubernetes provides **ConfigMap** and **Secret** to inject configuration and sensitive data into pods. Here's a brief comparison and usage guide.
+
+---
+
+### ✅ Purpose
+
+| Resource     | Description                                                                  |
+|--------------|------------------------------------------------------------------------------|
+| **ConfigMap** | Used to store **non-sensitive configuration data** as key-value pairs.        |
+| **Secret**    | Used to store **sensitive data** such as passwords, tokens, and API keys.     |
+
+---
+
+### 🧩 Key Differences
+
+| Feature            | ConfigMap                          | Secret                              |
+|--------------------|------------------------------------|--------------------------------------|
+| **Use Case**        | App settings, log levels, etc.     | Passwords, API keys, certificates    |
+| **Data Format**     | Plaintext                         | Base64-encoded (can be encrypted)    |
+| **Security Level**  | Low                               | Medium (RBAC + optional encryption)  |
+| **Mountable**       | Yes (as env vars or volumes)      | Yes (as env vars or volumes)         |
+| **Readable By**     | Anyone with pod access            | Restricted via RBAC                  |
+
+---
+
+### 📄 ConfigMap Example
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: my-config
+data:
+  APP_ENV: "production"
+  LOG_LEVEL: "info"
+```
+### 🔐 Secret Example
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: my-secret
+type: Opaque
+data:
+  DB_PASSWORD: cGFzc3dvcmQ=  # base64 for "password"
+```
+### 📌 Summary Table
+
+| Feature       | ConfigMap              | Secret                        |
+|---------------|------------------------|-------------------------------|
+| **Type**      | Non-sensitive config   | Sensitive data                |
+| **Format**    | Plain text             | Base64 (optionally encrypted) |
+| **Usage**     | Env vars, volumes      | Env vars, volumes             |
+
+--- 
