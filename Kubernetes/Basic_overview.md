@@ -734,3 +734,63 @@ like every day, every hour, or every Monday at 5 AM.
 schedule: "0 0 * * *"
 ```
 
+---
+
+## ⚓ Helm in Kubernetes
+
+### 📌 What is Helm?
+
+**Helm** is a **package manager for Kubernetes** — similar to how `apt` works for Ubuntu or `yum` for CentOS, but specifically for Kubernetes applications.
+
+---
+
+### 🧠 In Simple Terms
+
+> Helm helps you **install, manage, and upgrade** Kubernetes applications using **Helm Charts** — which are like blueprints or templates for your applications.
+
+---
+
+### 📦 What is a Helm Chart?
+
+A **Helm Chart** is a package that contains:
+
+- YAML templates for Kubernetes resources (Deployments, Services, etc.)
+- Default configuration values
+- Metadata about the chart
+
+Think of it as a **reusable and configurable template** for deploying apps in Kubernetes.
+
+---
+
+### ✅ Why Use Helm?
+
+- 📦 Easily install complex apps with one command
+- ⚙️ Customize configurations with values
+- 🔁 Upgrade or roll back applications with version control
+- 🧹 Uninstall applications cleanly
+- 🚀 Deploy consistent environments (e.g., dev/staging/prod)
+
+---
+
+### 🛠️ Common Helm Commands
+
+```bash
+# Add a Helm repository
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+# Search for a chart
+helm search repo nginx
+
+# Install an application
+helm install my-nginx bitnami/nginx
+
+# Upgrade an application
+helm upgrade my-nginx bitnami/nginx --set replicaCount=3
+
+# Uninstall an application
+helm uninstall my-nginx
+
+# List all releases
+helm list
+```
+
