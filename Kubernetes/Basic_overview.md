@@ -519,3 +519,95 @@ data:
 | **Usage**     | Env vars, volumes      | Env vars, volumes             |
 
 --- 
+## Kubernetes Volume – Explained
+
+### How to persist data in Kubernetes using volumes?
+
+#### Three components of Kubernetes Storage:
+1. Persistent Volume
+2. Persistent Volume Claim
+3. Storage Class
+
+### Why?
+
+For instance, when we update data onto an application, and that application is running on pods, the data will be lost if the pod dies and we restart the application. So it's important to ensure we have **storage that doesn't depend on the pod lifecycle**.
+
+But we are not aware of which node will be active to fetch data from the storage, so we need to give **storage access on all nodes**.
+
+And what if the whole cluster crashes? We still need to make sure that the **storage should survive the cluster crash**.
+
+Key requirements:
+1. Storage should not be dependent on pod lifecycle  
+2. Storage should be available on each node  
+3. Storage should survive the cluster crash  
+
+---
+
+### 1. Persistent Volume
+
+**PersistentVolume (PV):** The actual physical or virtual storage in the cluster.
+
+A Persistent Volume (PV) is a piece of storage in your cluster that has been provisioned by an administrator or dynamically created using Storage Classes. It allows data to persist beyond the lifecycle of a Pod.
+
+We create this using a YAML file and we add:
+- `kind: PersistentVolume`
+- `spec:` (storage, access mode, ...)
+
+Since the Persistent Volume is abstract, it would need direct physical storage to operate.
+
+### Who creates it and when?
+
+The Kubernetes Administrator is responsible for making sure there are enough resources for the cluster to run. They maintain the cluster and its resources, so their task is to create and manage the storage.
+
+The developer must communicate what type of data storage is needed (e.g., Google Cloud Storage). The administrator would then create the resource (e.g., Google storage volume). However, the application must also be able to access it. So, the application needs to claim that volume, and the developer must create a YAML file to claim the Persistent Volume.
+
+---
+
+### 2. Persistent Volume Claim (PVC)
+
+**PersistentVolumeClaim (PVC):** A request for storage by a user or pod (like a ticket to use a PV).
+
+A PersistentVolumeClaim (PVC) is a request for storage by a user or a pod. It's how you bind to a PersistentVolume (PV) in Kubernetes. The PVC describes the amount of storage, access mode, and optionally, a StorageClass.
+
+### 📌 How It Works:
+- A PVC is created requesting 1Gi storage and ReadWriteOnce access.
+- Kubernetes looks for a suitable PV that matches the request.
+- If found, it binds the PVC to that PV.
+- You can then use the PVC in a pod to mount the storage.
+
+---
+
+### 3. Storage Class
+
+Let’s imagine there are hundreds of applications running daily and we need resources for all of them. The developer would reach out to the administrator, who would create the PV (Persistent Volume). Then the developer would make the PVC (Persistent Volume Claim) and use it.
+
+But this is tedious and manual, so to automate it we have **Storage Class**.
+
+A StorageClass defines how storage is provisioned in a Kubernetes cluster. It allows you to dynamically provision PersistentVolumes (PVs) when a PersistentVolumeClaim (PVC) is created — eliminating the need to pre-create PVs manually.
+
+---
+
+### ✅ Why Use StorageClass?
+- Automates volume provisioning  
+- Supports different storage types (SSD, HDD, network volumes, etc.)  
+- Enables faster and scalable storage allocation  
+- Useful in cloud environments (e.g., AWS EBS, GCP Persistent Disk, Azure Disk)  
+
+---
+
+### 🧱 Key Components
+
+| Element            | Description                                                  |
+|--------------------|--------------------------------------------------------------|
+| Provisioner        | Determines the type of backend storage (e.g., kubernetes.io/aws-ebs) |
+| Parameters         | Backend-specific configuration (e.g., type, zones)           |
+| ReclaimPolicy      | What to do with storage when PVC is deleted (Retain, Delete) |
+| VolumeBindingMode  | When volume binding and provisioning happens                 |
+
+---
+
+### 🗂️ Example Flow
+1. Admin creates a PV (or it's dynamically created).  
+2. User/app defines a PVC requesting storage (e.g., 5Gi).  
+3. Kubernetes binds the PVC to a matching PV.  
+4. The pod uses the PVC to mount the storage.
