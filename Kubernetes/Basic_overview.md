@@ -793,4 +793,69 @@ helm uninstall my-nginx
 # List all releases
 helm list
 ```
+---
+## 🛠️ Kubernetes Custom Resource Definitions (CRD)
 
+### 📌 What is a Custom Resource Definition (CRD)?
+
+In the Kubernetes API, a **resource** is an endpoint that stores a collection of API objects of a certain kind. For example, the built-in **pods** resource contains a collection of Pod objects.
+
+A **Custom Resource (CR)** is an object that extends the Kubernetes API, allowing you to introduce your own API into a project or cluster.
+
+A **Custom Resource Definition (CRD)** defines your own object kinds and lets the Kubernetes API Server handle the entire lifecycle. Deploying a CRD into the cluster causes the Kubernetes API server to begin serving the specified custom resource.
+
+---
+
+### 🧠 How Does CRD Work?
+
+When you create a new **Custom Resource Definition (CRD)**, the Kubernetes API Server creates a new RESTful resource path, which can be accessed by an entire cluster or a specific namespace. 
+
+Just like with existing built-in objects, deleting a namespace will also delete all custom resources in that namespace.
+
+---
+
+### ✅ Key Features of CRD:
+
+- **Extends Kubernetes API**: CRDs allow you to introduce custom objects or types into the Kubernetes cluster.
+- **Standard Kubernetes Ecosystem**: CRDs use the same ecosystem features (CLI, security, API services, and role-based access control).
+- **Replication & Lifecycle Management**: CRDs use the same lifecycle and replication features as other Kubernetes objects and are stored in the `etcd` cluster.
+- **No Overhead**: CRDs eliminate the need for self-directed implementations for custom objects.
+
+---
+
+### 🛠️ Common Operations with kubectl
+
+Here are some common `kubectl` commands for working with CRDs:
+
+### 1. **Create a New CRD**
+
+To create a new CustomResourceDefinition from a specified YAML file:
+
+```bash
+kubectl apply -f resourcedefinition.yaml
+```
+### 2. List Custom Resources of a Specific Kind
+```bash
+kubectl get crontab
+```
+
+### 3. List All Custom Resource Definitions
+```bash
+kubectl get crd
+```
+
+### Key Differences: YAML vs Kubernetes Manifest
+
+| **Aspect**           | **YAML**                                                   | **Kubernetes Manifest**                                      |
+|----------------------|------------------------------------------------------------|--------------------------------------------------------------|
+| **Definition**        | A data serialization format for configuration              | A Kubernetes configuration file written in YAML (or JSON) that defines resources |
+| **Purpose**           | General-purpose format for storing and exchanging data     | Defines Kubernetes resources like Pods, Services, Deployments, etc. |
+| **Usage Context**     | Used across various applications and systems               | Specifically used in Kubernetes to manage resources           |
+| **File Type**         | A file format (.yaml or .yml)                              | A YAML file used to define Kubernetes resources (sometimes referred to as a manifest) |
+| **Examples**          | Data configurations, settings, environment variables, etc. | Kubernetes Pods, Deployments, Services, ConfigMaps            |
+
+### Conclusion
+
+- **YAML** is simply a format used to structure data.
+- A **Kubernetes Manifest** is a YAML (or JSON) file that contains configuration for deploying and managing resources within a Kubernetes cluster.
+- In Kubernetes, the term **manifest** usually refers to the YAML file that describes the desired state of resources. So, in practice, **Kubernetes manifests are always YAML files**, but **not all YAML files are Kubernetes manifests**.
