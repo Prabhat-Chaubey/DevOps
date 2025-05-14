@@ -671,3 +671,66 @@ RBAC is used to define **who can do what** in your Kubernetes cluster. It allows
 
 `get` ,`list`,`watch`,`create`,`update`,`patch`,`delete`,`deletecollection`,`impersonate`,`bind`,`escalate`,`use`
 
+---
+
+## 🛠️ Kubernetes Jobs & CronJobs
+
+### 📌 What is a Job in Kubernetes?
+
+In Kubernetes, a **Job** is a controller used to run a **one-time or batch task** — ensuring that a specified number of pods successfully complete. It is different from Deployments or ReplicaSets, which are used for long-running services.
+
+---
+
+### 🧱 In Layman Terms
+
+A **Job** in Kubernetes is like a **to-do list task** for your computer.  
+It's used when you want to run something just once, like:
+
+1. Sending an email  
+2. Generating a report  
+3. Cleaning up old files  
+
+Once the task is done successfully, the Job is complete.
+
+🧼 If something goes wrong, Kubernetes will **try again** until it finishes or gives up after a few tries.
+
+---
+
+### ✅ Key Features of a Job
+
+| Feature              | Description                                                                 |
+|----------------------|-----------------------------------------------------------------------------|
+| **One-off Execution**| Runs a task to completion — not meant for persistent services.              |
+| **Retries on Failure**| If a pod fails, Job controller will start a new pod (up to a backoff limit).|
+| **Parallelism**       | Can run multiple pods in parallel to process parts of a job simultaneously. |
+| **Completion Tracking**| Job is marked as complete when the required number of pods finish.         |
+
+---
+
+## ⏰ What is a CronJob in Kubernetes?
+
+A **CronJob** in Kubernetes is like setting an **alarm clock** for your tasks.  
+It runs **Jobs on a schedule**, just like a cron job in Linux.
+
+---
+
+### 🧠 Simple Definition
+
+A **CronJob** is used when you want to run something **automatically at specific times** —  
+like every day, every hour, or every Monday at 5 AM.
+
+---
+
+### 🛠️ Behind the Scenes
+
+- A CronJob creates a **Job** at the time you schedule.
+- That **Job** runs the task one time and completes.
+
+---
+
+### 🧾 Cron Format Example
+
+```yaml
+schedule: "0 0 * * *"
+```
+
