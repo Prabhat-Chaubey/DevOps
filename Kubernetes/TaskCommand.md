@@ -132,3 +132,223 @@ spec:
   kubectl get pods -n default
   ```
 --- 
+# 🛠️ Task 6: Update Redis Pod Image
+
+## Task Overview
+
+This task involves updating the image of an existing Kubernetes pod named `redis` from an incorrect image (`redis:123`) to the correct image `redis:5-alpine`.
+
+Since pods in Kubernetes are immutable, we cannot update the image of a running pod directly. Instead, the old pod must be deleted and a new one created with the correct image.
+
+---
+
+## Specifications
+
+- **Pod Name**: redis  
+- **Namespace**: default  
+- **Correct Image**: `redis:5-alpine`  
+- **Container Port**: 6379  
+
+---
+
+## Steps Performed
+
+### 1. Delete the Existing Pod
+
+The existing pod was using an invalid image and needed to be removed:
+
+```bash
+kubectl delete pod redis -n default
+```
+### 2. Update the Pod Definition
++ The original redis-pod.yaml was edited to replace the incorrect image:
+  ```yaml
+  apiVersion: v1
+  kind: Pod
+  metadata:
+  name: redis
+  namespace: default
+  spec:
+  containers:
+    - name: redis
+      image: redis:5-alpine
+      ports:
+        - containerPort: 6379
+  ```
+### 3. Reapply the Pod YAML
++ To recreate the pod with the updated image
+  ```bash
+  kubectl apply -f redis-pod.yaml
+  ```
+
+---
+# 🛠️ Task 7: Create Pod with Environment Variables and Save Logs
+
+## Task Overview
+
+In this task, a Kubernetes pod named `envtest` is created in the `default` namespace using the `busybox:1.34` image. The container runs the command `env && sleep infinity`, and two environment variables are injected into the container. The task also involves capturing the pod's logs and saving them to a file.
+
+
+
+## Specifications
+
+- **Pod Name**: `envtest`
+- **Namespace**: `default`
+- **Image**: `busybox:1.34`
+- **Command**: `env && sleep infinity`
+- **Environment Variables**:
+  - `STUDENT_FIRST_NAME`: YourFirstName
+  - `STUDENT_LAST_NAME`: YourLastName
+- **Log Output File**: `$HOME/k8s_pods/default-envtest.log`
+
+
+## Steps Performed
+
+### 1. Create the Pod Manifest
+
+A file named `envtest-pod.yaml` was created with the following content:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: envtest
+  namespace: default
+spec:
+  containers:
+    - name: envtest
+      image: busybox:1.34
+      command: ["sh", "-c", "env && sleep infinity"]
+      env:
+        - name: STUDENT_FIRST_NAME
+          value: "YourFirstName"
+        - name: STUDENT_LAST_NAME
+          value: "YourLastName"
+```
+> Replace "YourFirstName" and "YourLastName" with your actual name.
++ The file was saved and applied using:
+  ```bash
+  kubectl apply -f envtest-pod.yaml
+  ```
+### 4. Save Pod Logs to a File
++ Log output was saved to the specified location:
+  ```bash
+  mkdir -p $HOME/k8s_pods
+  kubectl logs envtest > $HOME/k8s_pods/default-envtest.log
+  ```
+---
+# 🛠️ Task 8 (Advanced): Pod with Downward API Environment Variables
+
+## Task Overview
+
+This advanced task involves creating a Kubernetes pod named `i-know-who-i-am` in the `default` namespace using the `busybox:1.34` image. The container runs a command that prints environment variables and sleeps indefinitely. Several environment variables are dynamically populated using Kubernetes Downward API to provide introspective metadata to the pod.
+
+
+
+## Specifications
+
+- **Pod Name**: `i-know-who-i-am`
+- **Namespace**: `default`
+- **Image**: `busybox:1.34`
+- **Command**: `env && sleep infinity`
+- **Environment Variables** (resolved dynamically via Downward API):
+  - `MY_NODE_NAME`: name of the node where the pod is running
+  - `MY_POD_NAME`: name of the pod (automatically detected)
+  - `MY_POD_NAMESPACE`: namespace of the pod (automatically detected)
+  - `MY_POD_IP`: pod's IP address
+  - `MY_POD_SERVICE_ACCOUNT`: name of the service account used by the pod
+
+
+
+## Steps Performed
+
+### 1. Create the Pod Manifest
+
+A file named `i-know-who-i-am.yaml` was created with the following content:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: i-know-who-i-am
+  namespace: default
+spec:
+  containers:
+    - name: busybox
+      image: busybox:1.34
+      command: ["sh", "-c", "env && sleep infinity"]
+      env:
+        - name: MY_NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: MY_POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: MY_POD_NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MY_POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: MY_POD_SERVICE_ACCOUNT
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.serviceAccountName
+```
+### 2. Apply the Pod Definition
++ The pod was created using:
+  ```bash
+  kubectl apply -f i-know-who-i-am.yaml
+  ```
+### 3. Verify Pod Status
++ Pod status was confirmed using:
+  ```bash
+  kubectl get pods #would give all the pods
+  kubectl get pods i-know-who-i-am #gives specific pod
+  ```
+### 4. View Pod Logs
++ Logs were retrieved using:
+  ```bash
+  kubectl logs i-know-who-i-am
+  ```
+
+---
+# 🛠️  Task 9: Delete All Pods in `clean-up` Namespace
+
+## Task Overview
+
+This task focuses on cleaning up Kubernetes resources by deleting all pods in the `clean-up` namespace. This is a routine cluster maintenance task to free up resources or reset a namespace.
+
+---
+
+## Objective
+
+- **Action**: Delete all pods
+- **Target Namespace**: `clean-up`
+
+---
+
+## Steps Performed
+
+### 1. List All Pods in the Namespace
+
+Before deletion, the list of existing pods was verified:
+
+```bash
+kubectl get pods -n clean-up
+```
++ output
+  ```sql
+  NAME            READY   STATUS    RESTARTS   AGE
+  test-pod-1      1/1     Running   0          3h
+  test-pod-2      1/1     Running   0          2h
+  ```
+### 2. Delete All Pods in the Namespace
++ All pods were removed using:
+  ```bash
+  kubectl delete pods --all -n clean-up
+  ```
