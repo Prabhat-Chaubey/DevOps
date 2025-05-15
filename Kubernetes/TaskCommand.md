@@ -36,7 +36,7 @@ Fix the Pod named web in the namespace trouble so that:
   
 --- 
 
-##  Redis-DB Pod Fix for Kubernetes
+##  🛠️ Task 4: Redis-DB Pod Fix for Kubernetes
 
 ### Task Overview
 
@@ -81,3 +81,54 @@ After fixing the command, the pod was deleted and recreated to apply the change:
 kubectl delete pod redis-db -n trouble
 kubectl apply -f redis-fixed.yaml
 ```
+---
+# 🛠️ Task 5: Create a Pod with Invalid Image Name
+
+## Task Overview
+
+In this task, we will create a new Kubernetes pod named **redis** using the image `redis:123`, which is intentionally incorrect to trigger an image pull error. The task aims to demonstrate how to create a pod with a specific image and then troubleshoot the issue caused by an invalid image name.
+
+### Pod Specifications
+
+- **Pod Name**: redis
+- **Image Name**: redis:123 (Intentionally incorrect)
+- **Namespace**: default
+- **Container Port**: 6379
+
+---
+
+## Steps to Reproduce
+
+### 1. Create the Pod Definition File
+
+Create a YAML file to define the pod. The pod will use the `redis:123` image (which does not exist). You can use the following commands:
+
+```bash
+nano redis-pod.yaml
+```
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis
+  namespace: default
+spec:
+  containers:
+    - name: redis
+      image: redis:123  # This is intentionally incorrect
+      ports:
+        - containerPort: 6379
+
+```
+### 2. Apply the YAML to Create the Pod
++ Run the following command to create the pod in the default namespace:
+  ```bash
+  kubectl apply -f redis-pod.yaml
+  ```
+### 3. Verify Pod Creation
++ Check if the pod was created and is in the ImagePullBackOff or ErrImagePull state due to the invalid image:
+  ```bash
+  kubectl get pods -n default
+  ```
+--- 
