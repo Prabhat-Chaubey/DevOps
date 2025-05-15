@@ -352,3 +352,49 @@ kubectl get pods -n clean-up
   ```bash
   kubectl delete pods --all -n clean-up
   ```
+---
+# 🛠️ Task 10: Create a Static Pod
+
+### Requirements
+- Pod name: `nginx-static`
+- Image: `nginx:alpine`
+- Label: `app=nginx-static`
+- Namespace: `static`
+- Container port: `80`
+
+### Steps
+
+### 1. **Create the namespace** (if it doesn't exist):
+   ```bash
+   kubectl create namespace static
+   ```
+### 2. Access the Minikube node:
+   ```bash
+      minikube ssh
+   ```
+### 3. Create the manifest directory (if needed):
+ ```bash
+sudo mkdir -p /etc/kubernetes/manifests
+```
+### 4. Create the pod manifest:
+ ```bash
+sudo vi /etc/kubernetes/manifests/nginx-static.yaml
+```
+### 5. kubectl get pods -n static
+```bash
+kubectl get pods -n static
+```
+---
+# 🛠️ Task 11: Delete a Static Pod
+## 1. Access the Minikube node:
+```bash
+minikube ssh
+```
+## 2. Navigate to manifests directory:
+```bash
+cd /etc/kubernetes/manifests
+```
+## 3. Remove the pod manifest:
+```bash
+sudo rm nginx-static.yaml
+```
