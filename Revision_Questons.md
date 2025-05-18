@@ -31,6 +31,61 @@ A curated list of common **Bash shell scripting** interview questions. Perfect f
 7. [Scripting & Automation](#scripting--automation)
 8. [Debugging & Best Practices](#debugging--best-practices)
 ---
+# 🔧 Git Interview Questions
+
+A comprehensive list of frequently asked **Git interview questions**. Ideal for software engineers, DevOps professionals, and anyone who uses version control and is preparing for technical interviews.
+
+---
+## 📚 Table of Contents
+
+1. [Git Basics](#git-basics)
+2. [Branching & Merging](#branching--merging)
+3. [Staging & Committing](#staging--committing)
+4. [Undoing Changes](#undoing-changes)
+5. [Remote Repositories](#remote-repositories)
+6. [Rebasing & Cherry-Picking](#rebasing--cherry-picking)
+7. [Tags & Releases](#tags--releases)
+8. [Git Internals](#git-internals)
+9. [Advanced Scenarios](#advanced-scenarios)
+
+---
+# 🐳 Docker Interview Questions
+
+A comprehensive list of commonly asked **Docker interview questions** — ideal for DevOps engineers, cloud professionals, and software developers preparing for interviews or brushing up on containerization concepts.
+
+---
+## 📚 Table of Contents
+
+1. [Docker Basics](#docker-basics)
+2. [Images & Containers](#images--containers)
+3. [Dockerfile](#dockerfile)
+4. [Volumes & Data Persistence](#volumes--data-persistence)
+5. [Networking in Docker](#networking-in-docker)
+6. [Docker Compose](#docker-compose)
+7. [Docker Registry](#docker-registry)
+8. [Security & Optimization](#security--optimization)
+9. [Troubleshooting & Advanced](#troubleshooting--advanced)
+
+---
+# ☸️ Kubernetes Interview Questions
+
+This document lists the most commonly asked **Kubernetes (K8s)** interview questions — ideal for DevOps engineers, site reliability engineers, and cloud-native developers preparing for interviews or brushing up on orchestration fundamentals.
+
+---
+## 📚 Table of Contents
+
+1. [Kubernetes Basics](#kubernetes-basics)
+2. [Architecture & Components](#architecture--components)
+3. [Pods & Workloads](#pods--workloads)
+4. [Services & Networking](#services--networking)
+5. [Configuration & Secrets](#configuration--secrets)
+6. [Storage](#storage)
+7. [Helm & Package Management](#helm--package-management)
+8. [Security](#security)
+9. [Troubleshooting & Debugging](#troubleshooting--debugging)
+10. [CI/CD & Advanced Concepts](#cicd--advanced-concepts)
+
+---
 
 ## Linux Basics 
 
@@ -199,6 +254,283 @@ A curated list of common **Bash shell scripting** interview questions. Perfect f
 - What are some best practices for writing Bash scripts?
 - How do you lint or format your Bash scripts?
 - How do you write portable and maintainable shell code?
+
+---
+##  Git Basics
+
+- What is Git and how is it different from other version control systems?
+- What is the difference between Git and GitHub?
+- How do you check your current Git configuration?
+- How do you initialize a Git repository?
+- What is the `.git` directory?
+
+---
+
+##  Branching & Merging
+
+- How do you create, list, and delete branches?
+- What is the difference between `merge` and `rebase`?
+- How do you resolve merge conflicts?
+- What is a fast-forward merge?
+- How do you switch between branches?
+
+---
+
+##  Staging & Committing
+
+- What is the staging area in Git?
+- What is the difference between `git add`, `git commit`, and `git push`?
+- How do you write a good commit message?
+- What does `git status` show?
+- What does `git diff` do?
+
+---
+
+##  Undoing Changes
+
+- How do you undo a commit that hasn’t been pushed?
+- What is the difference between `git reset`, `git checkout`, and `git revert`?
+- How do you discard changes in the working directory?
+- How do you recover a deleted branch or commit?
+- What is the `reflog` and how is it used?
+
+---
+
+##  Remote Repositories
+
+- How do you connect to a remote repository?
+- What is the difference between `origin` and `upstream`?
+- How do you clone a Git repository?
+- What is the purpose of `git fetch` vs `git pull`?
+- How do you push to a specific branch?
+
+---
+
+##  Rebasing & Cherry-Picking
+
+- What is rebasing and when should you use it?
+- How is `git rebase` different from `git merge`?
+- What is interactive rebase (`git rebase -i`)?
+- How do you squash commits?
+- What does `git cherry-pick` do?
+
+---
+
+##  Tags & Releases
+
+- How do you create and list tags?
+- What is the difference between lightweight and annotated tags?
+- How do you delete a tag locally and remotely?
+- How do you check out a specific tag?
+- How are tags used in release workflows?
+
+---
+
+##  Git Internals
+
+- What is a commit hash?
+- What is the structure of a Git commit?
+- What are blobs, trees, and commits in Git?
+- What is an index?
+- How does Git achieve version control efficiency?
+
+---
+
+##  Advanced Scenarios
+
+- How do you resolve a detached HEAD state?
+- What are submodules in Git?
+- How do you handle large binary files in Git?
+- What tools or strategies do you use for Git hooks?
+- How do you deal with a corrupted repository?
+
+---
+##  Docker Basics
+
+- What is Docker and how does it differ from a virtual machine?
+- What are the advantages of using Docker?
+- What is the architecture of Docker?
+- What is the Docker daemon and Docker client?
+- What is the role of the Docker Engine?
+
+---
+
+##  Images & Containers
+
+- What is the difference between an image and a container?
+- How do you list, start, stop, and remove containers?
+- How do you create an image from a container?
+- How do you inspect an image or a container?
+- What is the difference between `docker run` and `docker start`?
+
+---
+
+##  Dockerfile
+
+- What is a Dockerfile?
+- What is the difference between `CMD` and `ENTRYPOINT`?
+- What is the difference between `COPY` and `ADD`?
+- What is the purpose of `EXPOSE`, `WORKDIR`, `USER`, and `ENV`?
+- How do you optimize a Dockerfile for smaller image size?
+
+---
+
+##  Volumes & Data Persistence
+
+- What are volumes in Docker?
+- How do volumes differ from bind mounts?
+- How do you create, inspect, and delete volumes?
+- What is a named volume vs anonymous volume?
+- How can you persist data across container restarts?
+
+---
+
+##  Networking in Docker
+
+- What are Docker network types (bridge, host, none)?
+- How do containers communicate with each other?
+- What is port forwarding in Docker?
+- How do you connect a container to multiple networks?
+- How do you inspect and troubleshoot Docker networks?
+
+---
+
+##  Docker Compose
+
+- What is Docker Compose and why is it used?
+- What is the syntax of a `docker-compose.yml` file?
+- How do you start, stop, and rebuild services with Docker Compose?
+- What is the difference between `depends_on` and `healthcheck`?
+- How do you scale services in Docker Compose?
+
+---
+
+##  Docker Registry
+
+- What is Docker Hub?
+- How do you push and pull images from a registry?
+- What is a private Docker registry and how do you set it up?
+- How do you tag an image for pushing to a registry?
+- How do you authenticate with a private registry?
+
+---
+
+##  Security & Optimization
+
+- What are some best practices for securing Docker containers?
+- How do you scan Docker images for vulnerabilities?
+- What is Docker Content Trust?
+- What are multi-stage builds and how do they improve image security?
+- How can you reduce Docker image size?
+
+---
+
+##  Troubleshooting & Advanced
+
+- How do you debug a failing container?
+- What is the difference between `docker logs`, `docker exec`, and `docker attach`?
+- How do you clean up unused Docker objects?
+- How do you monitor Docker containers?
+- What are some common issues with Docker in production?
+
+---
+##  Kubernetes Basics
+
+- What is Kubernetes and why is it used?
+- What are the differences between Docker Swarm and Kubernetes?
+- What does "container orchestration" mean?
+- What is `kubectl` and how is it used?
+- What are the key benefits of Kubernetes?
+
+---
+
+##  Architecture & Components
+
+- What are the main components of the Kubernetes control plane?
+- What is the role of kube-apiserver, etcd, controller-manager, and scheduler?
+- What is a node in Kubernetes?
+- What are kubelet and kube-proxy?
+- What is the role of the Container Runtime Interface (CRI)?
+
+---
+
+##  Pods & Workloads
+
+- What is a Pod in Kubernetes?
+- What is the difference between a Pod, ReplicaSet, and Deployment?
+- What is a StatefulSet and when do you use it?
+- What is a DaemonSet?
+- What is a Job and a CronJob?
+
+---
+
+##  Services & Networking
+
+- What is a Kubernetes Service?
+- What are the types of Services (ClusterIP, NodePort, LoadBalancer, ExternalName)?
+- How does DNS work in Kubernetes?
+- What is a Service Mesh and how does it relate to Kubernetes?
+- What are Ingress and Ingress Controllers?
+
+---
+
+##  Configuration & Secrets
+
+- What are ConfigMaps and how are they used?
+- What are Secrets and how do they differ from ConfigMaps?
+- How can you mount a Secret as a volume?
+- How do you update an environment variable in a running pod?
+- What is the best practice for managing sensitive data in Kubernetes?
+
+---
+
+##  Storage
+
+- What is a Volume in Kubernetes?
+- What is the difference between `emptyDir`, `hostPath`, and persistent volumes?
+- What is a PersistentVolume (PV) and PersistentVolumeClaim (PVC)?
+- What is a StorageClass?
+- How does dynamic provisioning work?
+
+---
+
+##  Helm & Package Management
+
+- What is Helm and why is it used?
+- What is a Helm Chart?
+- How do you install, upgrade, and rollback Helm releases?
+- What is the difference between Helm 2 and Helm 3?
+- How do you customize values in a Helm chart?
+
+---
+
+##  Security
+
+- What are RBAC and its components (Role, RoleBinding, ClusterRole)?
+- How do you create a Service Account and bind it?
+- What is a Kubernetes NetworkPolicy?
+- How do you secure communication between components in a cluster?
+- What is PodSecurityPolicy (deprecated) and its successor?
+
+---
+
+##  Troubleshooting & Debugging
+
+- How do you check the status of a pod?
+- How do you debug a pod stuck in `CrashLoopBackOff`?
+- What are common causes of a failed deployment?
+- How do you view logs for a pod?
+- What are events and how do you monitor them?
+
+---
+
+##  CI/CD & Advanced Concepts
+
+- How do you perform zero-downtime deployments?
+- What is a Blue/Green or Canary deployment in Kubernetes?
+- What is the role of Kubernetes in a CI/CD pipeline?
+- What is a custom resource and what is a CRD?
+- What is an Operator in Kubernetes?
 
 ---
 
