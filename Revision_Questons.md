@@ -6,18 +6,18 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ## 📚 Table of Contents
 
-1. [Linux Basics](#linux-basics)
-2. [File System & Permissions](#file-system--permissions)
-3. [Process & Service Management](#process--service-management)
-4. [User & Group Management](#user--group-management)
-5. [Networking](#networking)
-6. [Package Management](#package-management)
-7. [Logs & Monitoring](#logs--monitoring)
-8. [Advanced & Scenario-Based](#advanced--scenario-based)
+1. [🧠 Linux Basics](#linux-basics)
+2. [📂 File System & Permissions](#file-system--permissions)
+3. [🧩 Process & Service Management](#process--service-management)
+4. [👥 User & Group Management](#user--group-management)
+5. [🌐 Networking](#networking)
+6. [📦 Package Management](#package-management)
+7. [📈 Logs & Monitoring](#logs--monitoring)
+8. [🔍 Advanced & Scenario-Based](#advanced--scenario-based)
 
 ---
 
-## Linux Basics 
+## 🧠 Linux Basics 
 
 - What is Linux and how is it different from other operating systems?
 - What is the Linux kernel?
