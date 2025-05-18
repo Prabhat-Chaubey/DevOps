@@ -106,6 +106,9 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 - What is the difference between absolute and relative paths?
 - What are file permissions in Linux and how are they represented?
 - How do `chmod`, `chown`, and `umask` work?
+    - **chmod** : `Changes the permissions of a file or directory.`
+    -  **chown**: `Changes the owner and/or group of a file or directory.`
+    -  **umask**: `Sets the default file permissions when new files and directories are created.` 
 - What are symbolic (soft) and hard links?
 - What is the difference between `>` and `>>` in shell redirection?
 
