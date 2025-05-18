@@ -17,7 +17,7 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ---
 
-## 🧠 Linux Basics
+## Linux Basics 
 
 - What is Linux and how is it different from other operating systems?
 - What is the Linux kernel?
