@@ -6,18 +6,18 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ## 📚 Table of Contents
 
-1. [🧠 Linux Basics](#linux-basics)
-2. [📂 File System & Permissions](#file-system--permissions)
-3. [🧩 Process & Service Management](#process--service-management)
-4. [👥 User & Group Management](#user--group-management)
-5. [🌐 Networking](#networking)
-6. [📦 Package Management](#package-management)
-7. [📈 Logs & Monitoring](#logs--monitoring)
-8. [🔍 Advanced & Scenario-Based](#advanced--scenario-based)
+1. [Linux Basics](#linux-basics)
+2. [File System & Permissions](#file-system--permissions)
+3. [Process & Service Management](#process--service-management)
+4. [User & Group Management](#user--group-management)
+5. [Networking](#networking)
+6. [Package Management](#package-management)
+7. [Logs & Monitoring](#logs--monitoring)
+8. [Advanced & Scenario-Based](#advanced--scenario-based)
 
 ---
 
-## 🧠 Linux Basics 
+## Linux Basics 
 
 - What is Linux and how is it different from other operating systems?
 - What is the Linux kernel?
@@ -29,7 +29,7 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ---
 
-## 📂 File System & Permissions
+## File System & Permissions
 
 - What is the Linux file system hierarchy?
 - What are the meanings of `/etc`, `/var`, `/usr`, `/home`, and `/tmp`?
@@ -41,7 +41,7 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ---
 
-## 🧩 Process & Service Management
+## Process & Service Management
 
 - How can you view running processes in Linux?
 - What is the difference between `ps`, `top`, and `htop`?
@@ -53,7 +53,7 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ---
 
-## 👥 User & Group Management
+## User & Group Management
 
 - How do you create, modify, and delete a user in Linux?
 - What is the difference between `su` and `sudo`?
@@ -64,7 +64,7 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ---
 
-## 🌐 Networking
+## Networking
 
 - How do you check your IP address in Linux?
 - How do you view open ports and listening services?
@@ -75,7 +75,7 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ---
 
-## 📦 Package Management
+## Package Management
 
 - What is the difference between APT and YUM/DNF?
 - How do you install, remove, and update packages in Debian-based and RedHat-based systems?
@@ -85,7 +85,7 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ---
 
-## 📈 Logs & Monitoring
+## Logs & Monitoring
 
 - Where are system logs stored in Linux?
 - How do you monitor system resources (CPU, memory, disk)?
@@ -95,7 +95,7 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ---
 
-## 🔍 Advanced & Scenario-Based
+## Advanced & Scenario-Based
 
 - How do you make a file immutable in Linux?
 - What steps do you follow when SSH is not working?
@@ -108,7 +108,7 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 
 ---
 
-## 🙋‍♂️ Contribute
+## Contribute
 
 Want to add more questions? Feel free to fork and open a pull request!
 
