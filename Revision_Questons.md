@@ -16,6 +16,21 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 8. [Advanced & Scenario-Based](#advanced--scenario-based)
 
 ---
+# 🖥️ Bash Interview Questions
+A curated list of common **Bash shell scripting** interview questions. Perfect for Linux system administrators, DevOps engineers, and automation enthusiasts preparing for interviews or brushing up on scripting skills.
+
+---
+## 📚 Table of Contents
+
+1. [Bash Basics](#bash-basics)
+2. [Variables & Data Types](#variables--data-types)
+3. [Control Flow](#control-flow)
+4. [Functions](#functions)
+5. [String & File Operations](#string--file-operations)
+6. [Process Management](#process-management)
+7. [Scripting & Automation](#scripting--automation)
+8. [Debugging & Best Practices](#debugging--best-practices)
+---
 
 ## Linux Basics 
 
@@ -105,6 +120,85 @@ A categorized list of commonly asked **Linux Operating System** interview questi
 - How do you secure a Linux server?
 - What is SELinux/AppArmor and how is it used?
 - What is the difference between `kill`, `killall`, and `pkill`?
+
+---
+## Bash Basics
+
+- What is Bash?
+- How is Bash different from other shells like sh, zsh, or csh?
+- How do you find your current shell?
+- How do you change the default shell?
+- What are some key features of Bash?
+
+---
+
+## Variables & Data Types
+
+- How do you declare and access variables in Bash?
+- What is the difference between `$var`, `${var}`, and `"$var"`?
+- What are environment variables and how do you export them?
+- What is the difference between `local` and `global` variables?
+- How can you perform arithmetic operations in Bash?
+
+---
+
+##  Control Flow
+
+- How do `if`, `elif`, and `else` work in Bash?
+- What is the syntax for `case` statements?
+- What is the difference between `while`, `until`, and `for` loops?
+- How do you break or continue from a loop?
+- How do you test numeric and string conditions using `[[ ... ]]` or `[ ... ]`?
+
+---
+
+##  Functions
+
+- How do you define a function in Bash?
+- How do you pass arguments to functions?
+- How can a function return a value?
+- What is the difference between `return` and `echo` in functions?
+
+---
+
+## String & File Operations
+
+- How do you concatenate strings in Bash?
+- How do you extract substrings from a variable?
+- How do you read and write files in Bash?
+- What is the use of `cut`, `awk`, `sed`, `grep`, and `tr`?
+- How do you test if a file exists, is readable, or is a directory?
+
+---
+
+##  Process Management
+
+- How do you run a process in the background?
+- What is the difference between `&`, `nohup`, and `disown`?
+- How do you get the PID of a running process?
+- How do you trap signals like `SIGINT` in Bash scripts?
+- How do you use `wait`, `sleep`, and `kill`?
+
+---
+
+##  Scripting & Automation
+
+- How do you make a script executable?
+- What is the purpose of the shebang (`#!/bin/bash`)?
+- How do you read user input within a script?
+- How do you pass and access command-line arguments (`$1`, `$@`, `$#`)?
+- How do you handle errors in Bash scripts?
+- What are exit codes in Bash? How do you check them?
+
+---
+
+## Debugging & Best Practices
+
+- How do you debug a Bash script (`bash -x`)?
+- How do you handle unexpected input?
+- What are some best practices for writing Bash scripts?
+- How do you lint or format your Bash scripts?
+- How do you write portable and maintainable shell code?
 
 ---
 
