@@ -129,10 +129,15 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 ## User & Group Management
 
 - How do you create, modify, and delete a user in Linux?
+    - `sudo useradd <username>`
+    - `sudo usermod [options] <username>`
+    - `sudo userdel <username>` 
 - What is the difference between `su` and `sudo`?
 - How do you add a user to a group?
+    - `sudo usermod -aG <groupname> <username>` 
 - What are the purposes of `/etc/passwd`, `/etc/shadow`, and `/etc/group`?
 - How do you set password policies for users?
+    - `sudo chage [options] <username>` 
 - How can you give limited sudo access to a user?
 
 ---
@@ -142,6 +147,9 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 - How do you check your IP address in Linux?
 - How do you view open ports and listening services?
 - What commands are used to test network connectivity?
+    - `ping` : to see if its reachable
+    - `curl`: Tesrendpoints
+    - `wget`: To test downloads 
 - What is the purpose of `/etc/hosts` and `/etc/resolv.conf`?
 - How do you configure static IP in Linux?
 - How do you restart network services?
@@ -276,12 +284,17 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 - How do you resolve merge conflicts?
 - What is a fast-forward merge?
 - How do you switch between branches?
+    - `git checkout <branchname>`
+ 
 
 ---
 
 ##  Staging & Committing
 
 - What is the staging area in Git?
+    - `Working Directory`
+    - `Staging Area`
+    - `Commit History` 
 - What is the difference between `git add`, `git commit`, and `git push`?
 - How do you write a good commit message?
 - What does `git status` show?
@@ -293,8 +306,12 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 
 - How do you undo a commit that hasn’t been pushed?
 - What is the difference between `git reset`, `git checkout`, and `git revert`?
+    - `reset` -> Move branch pointer to a different commit
+    - `git checkout` ->  Switch branches or restore files
+    - `git revert` -> Create a new commit that undoes changes 
 - How do you discard changes in the working directory?
 - How do you recover a deleted branch or commit?
+  - `git checkout -b <branch-name> <commit-hash>` 
 - What is the `reflog` and how is it used?
 
 ---
@@ -302,11 +319,16 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 ##  Remote Repositories
 
 - How do you connect to a remote repository?
+    - `git remote add origin <remote_repo_url>`
+    - `git remote add upstream <upstream_repo_url>` 
 - What is the difference between `origin` and `upstream`?
+    - `origin` - push and pull
+    - `upstream` - fetch, merge, or rebase 
 - How do you clone a Git repository?
+    - `git clone https://github.com/your-username/repo.git` 
 - What is the purpose of `git fetch` vs `git pull`?
 - How do you push to a specific branch?
-
+    - `git push <remote-name> <local-branch-name>:<remote-branch-name>`
 ---
 
 ##  Rebasing & Cherry-Picking
@@ -351,9 +373,12 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 ##  Docker Basics
 
 - What is Docker and how does it differ from a virtual machine?
+    - **Docker** uses containers to share the host OS kernel, making it lightweight and fast, while a **virtual machine** includes a full operating system, which is heavier and slower. 
 - What are the advantages of using Docker?
 - What is the architecture of Docker?
 - What is the Docker daemon and Docker client?
+    - `Docker daemon`: Manages Docker containers, images, networks, volumes
+    - `Docker client`: Sends commands to the Docker Daemon 
 - What is the role of the Docker Engine?
 
 ---
@@ -361,9 +386,25 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 ##  Images & Containers
 
 - What is the difference between an image and a container?
+    - `image` : just the readonly dependecies and all
+    - `container` : Running instance of image
 - How do you list, start, stop, and remove containers?
+    - `docker ps -a`
+    - `docker start <container_name_or_id>`
+    - `docker start <container_name_or_id>`
+    - `docker rm <container_name_or_id>`
 - How do you create an image from a container?
+    - image -> Container
+      ```bash
+          docker pull ubuntu:latest
+            docker run <options> <image_name> <command>
+      ```
+    - Container -> Image
+      ```bash
+      docker run -it --name mycontainer ubuntu
+      ```
 - How do you inspect an image or a container?
+     - `docker inspect <image_name_or_id>`
 - What is the difference between `docker run` and `docker start`?
 
 ---
@@ -372,6 +413,8 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 
 - What is a Dockerfile?
 - What is the difference between `CMD` and `ENTRYPOINT`?
+    - `CMD` and `ENTRYPOINT` both have purpose of setting the default commands which would run as soon as the contaiener stars
+    - `CMD` provides which can be overwridden but not of `ENTRYPOINT`  
 - What is the difference between `COPY` and `ADD`?
 - What is the purpose of `EXPOSE`, `WORKDIR`, `USER`, and `ENV`?
 - How do you optimize a Dockerfile for smaller image size?
@@ -381,7 +424,10 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 ##  Volumes & Data Persistence
 
 - What are volumes in Docker?
+    - Docker volumes are used to persist data generated or used by Docker containers. 
 - How do volumes differ from bind mounts?
+    - `Volumes` are more portable as they are managed by Docker and can be easily shared between containers.
+    - `Bind mounts` are less portable because they depend on the specific file path on the host machine.
 - How do you create, inspect, and delete volumes?
 - What is a named volume vs anonymous volume?
 - How can you persist data across container restarts?
@@ -392,6 +438,10 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 
 - What are Docker network types (bridge, host, none)?
 - How do containers communicate with each other?
+    - Bridge Network (Default Network Mode)
+    - Host Network
+    - Custom User-Defined Networks (Preferred for Container Communication)
+    - Using Docker Compose 
 - What is port forwarding in Docker?
 - How do you connect a container to multiple networks?
 - How do you inspect and troubleshoot Docker networks?
@@ -401,10 +451,13 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 ##  Docker Compose
 
 - What is Docker Compose and why is it used?
+    - Docker Compose is a tool that allows you to define and manage multi-container Docker applications. 
 - What is the syntax of a `docker-compose.yml` file?
 - How do you start, stop, and rebuild services with Docker Compose?
+    - `docker-compose <option>` 
 - What is the difference between `depends_on` and `healthcheck`?
 - How do you scale services in Docker Compose?
+    - `- How do you scale services in Docker Compose?` 
 
 ---
 
