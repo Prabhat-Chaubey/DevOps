@@ -589,7 +589,16 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 - What is an Operator in Kubernetes?
 
 ---
+# Important `vi`/`vim` Commands
 
+## Basic Navigation
+- **Go to the beginning of the file**: `gg`
+- **Go to the end of the file**: `G`
+- **Go to a specific line** (e.g., line 100): `100G`
+- **Move cursor up by one line**: `k`
+- **Move cursor down by one line**: `j`
+- **Move cursor left by one character**: `h`
+- **Move cursor right by one character**: `l`
 ## Contribute
 
 Want to add more questions? Feel free to fork and open a pull request!
