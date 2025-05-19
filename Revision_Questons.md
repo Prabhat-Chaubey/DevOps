@@ -110,6 +110,8 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
     -  **chown**: `Changes the owner and/or group of a file or directory.`
     -  **umask**: `Sets the default file permissions when new files and directories are created.` 
 - What are symbolic (soft) and hard links?
+    - `soft`:File path
+    - `hard`:File's inode 
 - What is the difference between `>` and `>>` in shell redirection?
 
 ---
@@ -148,7 +150,7 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 - How do you view open ports and listening services?
 - What commands are used to test network connectivity?
     - `ping` : to see if its reachable
-    - `curl`: Tesrendpoints
+    - `curl`: Test endpoints
     - `wget`: To test downloads 
 - What is the purpose of `/etc/hosts` and `/etc/resolv.conf`?
 - How do you configure static IP in Linux?
@@ -299,6 +301,7 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 - How do you write a good commit message?
 - What does `git status` show?
 - What does `git diff` do?
+    - The git diff command shows the difference between two states of a Git repository. It's mainly used to see what changes have been made before committing. 
 
 ---
 
@@ -313,6 +316,7 @@ This document lists the most commonly asked **Kubernetes (K8s)** interview quest
 - How do you recover a deleted branch or commit?
   - `git checkout -b <branch-name> <commit-hash>` 
 - What is the `reflog` and how is it used?
+    - shows a log of all the changes made to your local Git references  
 
 ---
 
