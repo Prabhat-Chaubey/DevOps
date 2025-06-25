@@ -1,5 +1,5 @@
 - [Commonly Used Linux Commands](#commonly-used-linux-commands)
-- [How do you check memory usage in Linux?](#how-do-you-check-memory-usage-in-linux?)
+- [How do you check memory usage in Linux](#how-do-you-check-memory-usage-in-linux)
   
 # 📜 Commonly Used Linux Commands
 
@@ -40,5 +40,5 @@
 | `rsync` | Sync files/directories between systems | `rsync -avz /source/ user@host:/destination/` |
 
 
-### How do you check memory usage in Linux?
+### How do you check memory usage in Linux
  - `vmstat`: this command is used to check the memory usage in linux
