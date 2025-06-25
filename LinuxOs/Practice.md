@@ -1,14 +1,19 @@
 ### - [Commonly Used Linux Commands](#commonly-used-linux-commands)
 ### - [How do you check memory usage in Linux](#how-do-you-check-memory-usage-in-linux)
-- [How do file permissions work in Linux](#how-do-file-permissions-work-in-linux)
-- [What is the difference between cron and at](#what=is-the-difference-between-cron-and-at)
-- [How can you check which users are currently logged in](#how-can-you-check-which-users-are-currently-logged-in)
-- [What is a daemon in Linux](#what-is-a-daemon-in-linux)
-- [What is the difference between apt, yum, and dnf](#what-is-the-difference-between-apt,-yum,-and-dnf)
-- [How to add a user and set a password in Linux](#how-to-add-a-user-and-set-a-password-in-linux)
-- [What is the difference between > and >>]
-- [What is the difference between su and sudo](#what-is-the-difference-between-su-and-sudo)
-- [How do you delete a user in Linux](#how-do-you-delete-a-user-in-linux)
+### - [How do file permissions work in Linux](#how-do-file-permissions-work-in-linux)
+### - [What is the difference between cron and at](#what=is-the-difference-between-cron-and-at)
+### - [How can you check which users are currently logged in](#how-can-you-check-which-users-are-currently-logged-in)
+### - [What is a daemon in Linux](#what-is-a-daemon-in-linux)
+### - [What is the difference between apt, yum, and dnf](#what-is-the-difference-between-apt,-yum,-and-dnf)
+### - [How to add a user and set a password in Linux](#how-to-add-a-user-and-set-a-password-in-linux)
+### - [What is the difference between > and >>]
+### - [What is the difference between su and sudo](#what-is-the-difference-between-su-and-sudo)
+### - [How do you delete a user in Linux](#how-do-you-delete-a-user-in-linux)
+### - [How do you add a user to a group](#how-do-you-add-a-user-to-a-group)
+### - [How do you create a group in Linux](#how-do-you-create-a-group-in-linux)
+### - [How do you give sudo access to a user](#how-do-you-give-sudo-access-to-a-user)
+### - [How do you change the ownership of a file](#how-do-you-change-the-ownership-of-a-file)
+### - [Service in Linux](#service-in-linux)
 # 📜 Commonly Used Linux Commands
 
 | Command | Description | Example |
@@ -84,9 +89,29 @@
 
 ### What is the difference between su and sudo
 - `su`: Switches user (defaults to root), starts a new shell.
+    - `su - username`
 - `sudo`: Executes a single command with elevated privileges without switching the user.
 
 ### How do you delete a user in Linux
 - `sudo userdel username `
 
+### How do you add a user to a group
+-  `sudo usermod -aG groupname username` 
+
  
+### How do you create a group in Linux
+- `sudo groupadd groupname`
+
+### How do you give sudo access to a user
+- `sudo usermod -aG sudo username`
+
+### How do you change the ownership of a file
+-  `sudo chown user:group file`
+
+### Service in Linux
+- `sudo systemctl start <service-name>`
+- `sudo systemctl stop <service-name>`
+- `sudo systemctl restart <service-name>`
+- `systemctl list-units --type=service`
+- `sudo systemctl enable <service-name>` : this allow to start on boot
+- `sudo systemctl disable <service-name>` : this allows to not start at boot
