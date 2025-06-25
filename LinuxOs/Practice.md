@@ -1,6 +1,14 @@
-- [Commonly Used Linux Commands](#commonly-used-linux-commands)
-- [How do you check memory usage in Linux](#how-do-you-check-memory-usage-in-linux)
-  
+### - [Commonly Used Linux Commands](#commonly-used-linux-commands)
+### - [How do you check memory usage in Linux](#how-do-you-check-memory-usage-in-linux)
+- [How do file permissions work in Linux](#how-do-file-permissions-work-in-linux)
+- [What is the difference between cron and at](#what=is-the-difference-between-cron-and-at)
+- [How can you check which users are currently logged in](#how-can-you-check-which-users-are-currently-logged-in)
+- [What is a daemon in Linux](#what-is-a-daemon-in-linux)
+- [What is the difference between apt, yum, and dnf](#what-is-the-difference-between-apt,-yum,-and-dnf)
+- [How to add a user and set a password in Linux](#how-to-add-a-user-and-set-a-password-in-linux)
+- [What is the difference between > and >>]
+- [What is the difference between su and sudo](#what-is-the-difference-between-su-and-sudo)
+- [How do you delete a user in Linux](#how-do-you-delete-a-user-in-linux)
 # 📜 Commonly Used Linux Commands
 
 | Command | Description | Example |
@@ -42,3 +50,43 @@
 
 ### How do you check memory usage in Linux
  - `vmstat`: this command is used to check the memory usage in linux
+
+### How do file permissions work in Linux
+ - Each file has permissions for:
+   -   Owner
+   -   Group
+   -   Others
+    `[Owner permissions] [Group permissions] [Other permissions]`
+    `chmod 700 file.txt`
+
+ ### What is the difference between cron and at
+ - `cron`: Schedules recurring tasks.
+ - `crontab -e`
+ - `0 2 * * * /home/user/backup.sh` 
+ - `at`: Schedules a one-time task.
+ - `echo "shutdown now" | at 17:00`
+
+
+### How can you check which users are currently logged in
+ - `who`
+
+### What is a daemon in Linux
+ - A daemon is a background process that starts during boot and continues running (e.g., `sshd`, `crond`, `httpd`).
+
+### What is the difference between apt, yum, and dnf
+ - These are package managers:
+ - `apt` for Debian-based systems (Ubuntu)
+ - `yum` and `dnf` for RedHat-based systems (CentOS, Fedora)
+
+### How to add a user and set a password in Linux
+- `sudo adduser username`
+- `sudo passwd username`
+
+### What is the difference between su and sudo
+- `su`: Switches user (defaults to root), starts a new shell.
+- `sudo`: Executes a single command with elevated privileges without switching the user.
+
+### How do you delete a user in Linux
+- `sudo userdel username `
+
+ 
