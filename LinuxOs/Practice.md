@@ -1,3 +1,5 @@
+- [Commonly Used Linux Commands](#commonly-used-linux-commands)
+
 # 📜 Commonly Used Linux Commands
 
 | Command | Description | Example |
@@ -35,3 +37,5 @@
 | `ping` | Check network connectivity | `ping google.com` |
 | `scp` | Secure file transfer | `scp file.txt user@192.168.1.10:/home/user/` |
 | `rsync` | Sync files/directories between systems | `rsync -avz /source/ user@host:/destination/` |
+
+
