@@ -1,7 +1,7 @@
 #### - [Commonly Used Linux Commands](#commonly-used-linux-commands)
 #### - [How do you check memory usage in Linux](#how-do-you-check-memory-usage-in-linux)
 #### - [How do file permissions work in Linux](#how-do-file-permissions-work-in-linux)
-#### - [What is the difference between cron and at](#what=is-the-difference-between-cron-and-at)
+#### - [What is the difference between cron and at](#what-is-the-difference-between-cron-and-at)
 #### - [How can you check which users are currently logged in](#how-can-you-check-which-users-are-currently-logged-in)
 #### - [What is a daemon in Linux](#what-is-a-daemon-in-linux)
 #### - [What is the difference between apt, yum, and dnf](#what-is-the-difference-between-apt,-yum,-and-dnf)
