@@ -1,5 +1,6 @@
 - [Commonly Used Linux Commands](#commonly-used-linux-commands)
-- [How do you check memory usage in Linux?](How-do-you-check-memory-usage-in-Linux?)
+- [How do you check memory usage in Linux?](#How-do-you-check-memory-usage-in-Linux?)
+  
 # 📜 Commonly Used Linux Commands
 
 | Command | Description | Example |
