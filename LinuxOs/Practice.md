@@ -151,3 +151,134 @@
 
 ### Add static route temporarily
 - `ip route add 192.168.X.X/24 via GATEWAY`
+
+
+
+## ✅ Linux Interview Q\&A Cheat Sheet (100 Questions)
+
+### 🔹 Basic Commands
+
+1. How to check disk space in human-readable format? → `df -h`
+2. How to check memory usage? → `free -h` or `top`
+3. How to check CPU usage? → `top` or `htop`
+4. How to find current directory? → `pwd`
+5. How to list all files including hidden ones? → `ls -la`
+6. How to create a new file? → `touch filename`
+7. How to create a new directory? → `mkdir dirname`
+8. How to move/rename a file? → `mv oldname newname`
+9. How to copy a file? → `cp source destination`
+10. How to remove a file? → `rm filename`
+11. How to remove a directory? → `rm -r dirname`
+12. How to display the contents of a file? → `cat file`
+13. How to count lines in a file? → `wc -l filename`
+14. How to search a string in files? → `grep 'text' filename`
+15. How to find a file by name? → `find / -name "filename"`
+16. How to view command history? → `history`
+17. How to repeat last command? → `!!`
+18. How to shutdown the system? → `sudo shutdown now`
+19. How to reboot the system? → `sudo reboot`
+20. How to schedule reboot in 5 mins? → `sudo shutdown +5`
+
+### 🔹 File Permissions & Ownership
+
+21. How to check file permissions? → `ls -l`
+22. What does `chmod 755 file` do? → rwxr-xr-x
+23. How to give execute permission to a script? → `chmod +x script.sh`
+24. How to remove all permissions from a file? → `chmod 000 file`
+25. How to give RWX to owner and RX to others? → `chmod 755 file`
+26. How to change owner of a file? → `sudo chown user file`
+27. How to change owner and group? → `sudo chown user:group file`
+28. What does `rwsr-xr-x` mean? → SUID bit is set
+29. How to change group only? → `chgrp group file`
+30. How to set read-only for all? → `chmod 444 file`
+
+### 🔹 User & Group Management
+
+31. How to create a user? → `sudo useradd username`
+32. How to create user with home directory? → `sudo useradd -m username`
+33. How to delete a user and home directory? → `sudo userdel -r username`
+34. How to switch to another user? → `su - username`
+35. How to check current user? → `whoami`
+36. How to check users logged in? → `who` or `w`
+37. How to add user to a group? → `sudo usermod -aG group user`
+38. How to list groups of a user? → `groups username`
+39. How to create a group? → `sudo groupadd groupname`
+40. How to delete a group? → `sudo groupdel groupname`
+
+### 🔹 Package Management (Debian/Ubuntu)
+
+41. How to update package list? → `sudo apt update`
+42. How to upgrade installed packages? → `sudo apt upgrade`
+43. How to install a package? → `sudo apt install package`
+44. How to remove a package? → `sudo apt remove package`
+45. How to search for a package? → `apt search package`
+46. What’s the difference between apt and apt-get? → `apt` is newer and user-friendly
+47. How to clean apt cache? → `sudo apt clean`
+48. How to list installed packages? → `dpkg -l`
+49. How to check details of a package? → `apt show package`
+50. How to hold a package version? → `sudo apt-mark hold package`
+
+### 🔹 Networking
+
+51. How to check IP address? → `ip a` or `ifconfig`
+52. How to check routing table? → `ip route`
+53. How to ping a host? → `ping hostname`
+54. How to test if port 80 is open? → `nc -zv host 80`
+55. How to test DNS lookup? → `nslookup domain`
+56. How to display all open ports? → `ss -tulpn`
+57. How to check internet connection? → `ping 8.8.8.8`
+58. How to download a file from terminal? → `wget URL`
+59. How to test latency to host? → `ping`
+60. How to traceroute? → `traceroute host` or `tracepath host`
+
+### 🔹 Process Management
+
+61. How to see running processes? → `ps aux`
+62. How to monitor real-time processes? → `top` or `htop`
+63. How to kill a process by PID? → `kill PID`
+64. How to force kill a process? → `kill -9 PID`
+65. How to find PID of a process? → `pidof process`
+66. How to send process to background? → `command &`
+67. How to bring background process to foreground? → `fg`
+68. How to list background jobs? → `jobs`
+69. What is nice value in Linux? → Priority of a process
+70. How to renice a running process? → `renice -n value -p PID`
+
+### 🔹 Disk Management
+
+71. How to check disk usage of filesystem? → `df -h`
+72. How to check directory size? → `du -sh directory`
+73. How to list mounted filesystems? → `mount` or `findmnt`
+74. How to mount a device? → `mount /dev/sdX /mnt`
+75. How to unmount a device? → `umount /mnt`
+76. What is `/etc/fstab` used for? → Persistent mount configuration
+77. How to check inode usage? → `df -i`
+78. How to format a partition? → `mkfs.ext4 /dev/sdX`
+79. How to label a filesystem? → `e2label /dev/sdX label`
+80. What does `lsblk` do? → Lists block devices
+
+### 🔹 Crontab & Scheduling
+
+81. How to list user’s crontab? → `crontab -l`
+82. How to edit crontab? → `crontab -e`
+83. How to run a job every minute? → `* * * * * command`
+84. How to run job every 5 minutes? → `*/5 * * * * command`
+85. What does `0 2 * * 1` mean? → Run every Monday at 2 AM
+86. How to check cron logs? → `/var/log/syslog` or `/var/log/cron`
+87. How to run a job once at specific time? → `at` command
+88. How to list scheduled `at` jobs? → `atq`
+89. How to remove a scheduled `at` job? → `atrm job_id`
+90. What is `anacron`? → Runs missed cron jobs
+
+### 🔹 Miscellaneous & Tools
+
+91. How to see system uptime? → `uptime`
+92. How to see kernel version? → `uname -r`
+93. How to see full system info? → `uname -a`
+94. How to check hostname? → `hostname`
+95. How to change hostname? → `hostnamectl set-hostname newname`
+96. How to see logs in real-time? → `tail -f logfile`
+97. How to edit file in terminal? → `nano filename` or `vi filename`
+98. What is the difference between nano, vi, and vim? → nano: simple, vi: basic modal, vim: improved vi
+99. How to view DNS config? → `cat /etc/resolv.conf`
+100. What is the purpose of `/etc/hosts`? → Local hostname resolution
