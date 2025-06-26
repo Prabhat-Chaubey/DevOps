@@ -14,6 +14,7 @@
 #### - [How do you give sudo access to a user](#how-do-you-give-sudo-access-to-a-user)
 #### - [How do you change the ownership of a file](#how-do-you-change-the-ownership-of-a-file)
 #### - [Service in Linux](#service-in-linux)
+#### - [Add static route temporarily](#add-static-route-temporarily)
 - [check which process is using port 8080](#check-which-process-is-using-port-8080)
 - [Process Status](#process-status)
 - [How do you move a file from one directory to another in Linux](#how-do-you-move-a-file-from-one-directory-to-another-in-linux)
@@ -145,3 +146,6 @@
 ### Cron format
 - `min hour day month weekday command`
 - `0 5 * * *`
+
+### Add static route temporarily
+- `ip route add 192.168.X.X/24 via GATEWAY`
