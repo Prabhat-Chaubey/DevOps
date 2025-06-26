@@ -14,6 +14,12 @@
 #### - [How do you give sudo access to a user](#how-do-you-give-sudo-access-to-a-user)
 #### - [How do you change the ownership of a file](#how-do-you-change-the-ownership-of-a-file)
 #### - [Service in Linux](#service-in-linux)
+- [check which process is using port 8080](#check-which-process-is-using-port-8080)
+- [Process Status](#process-status)
+- [How do you move a file from one directory to another in Linux](#how-do-you-move-a-file-from-one-directory-to-another-in-linux)
+- [To rename a file](#to-rename-a-file)
+- [how to find a file with a name](#how-to-ind-a-file-with-a-name)
+- [how to view permission](#how-to-view-permission)
 # 📜 Commonly Used Linux Commands
 
 | Command | Description | Example |
@@ -115,3 +121,27 @@
 - `systemctl list-units --type=service`
 - `sudo systemctl enable <service-name>` : this allow to start on boot
 - `sudo systemctl disable <service-name>` : this allows to not start at boot
+
+###  check which process is using port 8080
+- `sudo ss -tulpn | grep 8080` 
+
+### Process Status
+- `ps -e / -A`
+
+### How do you move a file from one directory to another in Linux
+- `mv <source> <destination>` : to move the file
+- `cp [options] source destination` : to copy the file
+- `scp [options] source destination` : for different vms orsystems
+
+### To rename a file
+- `mv oldname newname`
+
+### how to find a file with a name
+- `find /path -name "filename"`
+
+### how to view permission
+- `ls -l`
+
+### Cron format
+- `min hour day month weekday command`
+- `0 5 * * *`
