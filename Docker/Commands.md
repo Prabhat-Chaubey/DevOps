@@ -67,3 +67,7 @@
 | `docker system prune`          | Removes unused containers, networks, images  |
 | `docker container prune`       | Removes all stopped containers               |
 | `docker image prune`           | Removes dangling images                      |
+
+
+
+
