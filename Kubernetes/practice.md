@@ -36,7 +36,109 @@
 - [How would you implement blue-green deployment?](#how-would-you-implement-blue-green-deployment)
 
 
+## 🔰 Basic Level Questions (Must-Know)
 
+### 📌 Index
+
+- [What is Kubernetes, and what are its main features?](#what-is-kubernetes-and-what-are-its-main-features)
+- [What is a Pod in Kubernetes?](#what-is-a-pod-in-kubernetes)
+- [How does Kubernetes differ from Docker?](#how-does-kubernetes-differ-from-docker)
+- [What is a Deployment in Kubernetes?](#what-is-a-deployment-in-kubernetes)
+- [How do you scale a Deployment?](#how-do-you-scale-a-deployment)
+- [What is a Service in Kubernetes? Types of Services?](#what-is-a-service-in-kubernetes-types-of-services)
+- [What is the role of kubelet and kube-proxy?](#what-is-the-role-of-kubelet-and-kube-proxy)
+- [What is the function of kubectl?](#what-is-the-function-of-kubectl)
+- [What is the difference between kubectl apply and kubectl create?](#what-is-the-difference-between-kubectl-apply-and-kubectl-create)
+- [What is the use of ConfigMaps and Secrets?](#what-is-the-use-of-configmaps-and-secrets)
+
+---
+## ⚙️ Intermediate Level Questions (Hands-On & Use Cases)
+
+- [How do you perform a rolling update on a Deployment?](#how-do-you-perform-a-rolling-update-on-a-deployment)
+- [How can you rollback a failed Deployment?](#how-can-you-rollback-a-failed-deployment)
+- [What happens when a container inside a Pod crashes?](#what-happens-when-a-container-inside-a-pod-crashes)
+- [What is the difference between livenessProbe and readinessProbe?](#what-is-the-difference-between-livenessprobe-and-readinessprobe)
+- [What is the purpose of namespaces in Kubernetes?](#what-is-the-purpose-of-namespaces-in-kubernetes)
+- [How do you restrict a Pod from consuming too much CPU or memory?](#how-do-you-restrict-a-pod-from-consuming-too-much-cpu-or-memory)
+- [Explain how you would configure a Pod with environment variables from a ConfigMap.](#explain-how-you-would-configure-a-pod-with-environment-variables-from-a-configmap)
+- [How can you expose your application to the internet?](#how-can-you-expose-your-application-to-the-internet)
+- [What is the difference between NodePort and LoadBalancer services?](#what-is-the-difference-between-nodeport-and-loadbalancer-services)
+- [How do you inspect logs of a failed Pod?](#how-do-you-inspect-logs-of-a-failed-pod)
+
+---
+
+## 🧠 Advanced Level Questions (Architecture, Design & Debugging)
+
+- [Explain the complete lifecycle of a Pod.](#explain-the-complete-lifecycle-of-a-pod)
+- [How does the Kubernetes scheduler decide where to place a Pod?](#how-does-the-kubernetes-scheduler-decide-where-to-place-a-pod)
+- [What are taints and tolerations?](#what-are-taints-and-tolerations)
+- [What are node selectors and affinity rules?](#what-are-node-selectors-and-affinity-rules)
+- [What is a StatefulSet? When would you use it over a Deployment?](#what-is-a-statefulset-when-would-you-use-it-over-a-deployment)
+- [What is a DaemonSet and where is it used?](#what-is-a-daemonset-and-where-is-it-used)
+- [What is the difference between Ingress and LoadBalancer?](#what-is-the-difference-between-ingress-and-loadbalancer)
+- [How does Kubernetes handle service discovery?](#how-does-kubernetes-handle-service-discovery)
+- [What is a Headless Service and when would you use one?](#what-is-a-headless-service-and-when-would-you-use-one)
+- [How do you upgrade your Kubernetes cluster?](#how-do-you-upgrade-your-kubernetes-cluster)
+
+---
+
+## 🔐 Security & Access Control
+
+- [What is RBAC in Kubernetes? Explain Roles and RoleBindings.](#what-is-rbac-in-kubernetes-explain-roles-and-rolebindings)
+- [How do you restrict access to a specific namespace?](#how-do-you-restrict-access-to-a-specific-namespace)
+- [How do you ensure that a Secret is not exposed in plain text?](#how-do-you-ensure-that-a-secret-is-not-exposed-in-plain-text)
+- [What is a ServiceAccount?](#what-is-a-serviceaccount)
+- [What are NetworkPolicies in Kubernetes?](#what-are-networkpolicies-in-kubernetes)
+
+---
+
+## 💾 Storage Questions
+
+- [What is the difference between a PersistentVolume and a PersistentVolumeClaim?](#what-is-the-difference-between-a-persistentvolume-and-a-persistentvolumeclaim)
+- [How does dynamic provisioning of storage work in Kubernetes?](#how-does-dynamic-provisioning-of-storage-work-in-kubernetes)
+- [What is a StorageClass in Kubernetes?](#what-is-a-storageclass-in-kubernetes)
+- [Explain the lifecycle of a volume used in a Pod.](#explain-the-lifecycle-of-a-volume-used-in-a-pod)
+- [Can multiple Pods use the same PersistentVolumeClaim?](#can-multiple-pods-use-the-same-persistentvolumeclaim)
+
+---
+
+## 📦 Helm and CI/CD
+
+- [What is Helm in Kubernetes? What are its benefits?](#what-is-helm-in-kubernetes-what-are-its-benefits)
+- [What are Helm charts? What is values.yaml?](#what-are-helm-charts-what-is-valuesyaml)
+- [How do you deploy an application using Helm?](#how-do-you-deploy-an-application-using-helm)
+- [How do you integrate Kubernetes into a Jenkins/GitLab pipeline?](#how-do-you-integrate-kubernetes-into-a-jenkinsgitlab-pipeline)
+- [What is the difference between helm install and helm upgrade?](#what-is-the-difference-between-helm-install-and-helm-upgrade)
+
+---
+
+## 🧪 Monitoring, Troubleshooting, and Logging
+
+- [How do you debug a Pod stuck in CrashLoopBackOff?](#how-do-you-debug-a-pod-stuck-in-crashloopbackoff)
+- [How do you view metrics of Pods and Nodes?](#how-do-you-view-metrics-of-pods-and-nodes)
+- [What tools do you use for monitoring a Kubernetes cluster?](#what-tools-do-you-use-for-monitoring-a-kubernetes-cluster)
+- [How do you check what events happened in a namespace?](#how-do-you-check-what-events-happened-in-a-namespace)
+- [How do you inspect a failed Job or CronJob?](#how-do-you-inspect-a-failed-job-or-cronjob)
+
+---
+
+## 🚀 High-Level Design & Best Practices
+
+- [What would you consider when designing a Kubernetes cluster for high availability?](#what-would-you-consider-when-designing-a-kubernetes-cluster-for-high-availability)
+- [How would you handle blue/green deployments in Kubernetes?](#how-would-you-handle-bluegreen-deployments-in-kubernetes)
+- [How do you handle secrets management in a secure way?](#how-do-you-handle-secrets-management-in-a-secure-way)
+- [How do you implement autoscaling for your applications?](#how-do-you-implement-autoscaling-for-your-applications)
+- [What are some best practices for writing Kubernetes manifests?](#what-are-some-best-practices-for-writing-kubernetes-manifests)
+
+---
+
+## 🔄 Bonus: Real-World Scenario-Based Questions
+
+- [You see some pods are not scheduled—how will you debug this?](#you-see-some-pods-are-not-scheduledhow-will-you-debug-this)
+- [Your app is accessible via kubectl port-forward but not via NodePort service. What would you check?](#your-app-is-accessible-via-kubectl-port-forward-but-not-via-nodeport-service-what-would-you-check)
+- [A deployment is stuck during rollout—how will you resolve it?](#a-deployment-is-stuck-during-rollouthow-will-you-resolve-it)
+- [Your Pod starts successfully but then fails after 2 minutes. How would you debug this?](#your-pod-starts-successfully-but-then-fails-after-2-minutes-how-would-you-debug-this)
+- [How would you implement multi-tenant isolation in Kubernetes?](#how-would-you-implement-multi-tenant-isolation-in-kubernetes)
 
 These are essential for day-to-day Kubernetes work and are frequently asked in interviews:
 
