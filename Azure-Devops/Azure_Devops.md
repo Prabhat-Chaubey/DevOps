@@ -10,7 +10,8 @@
 ### What is Azure DevOps What services does it provide
 Azure DevOps is a DevOps platform by Microsoft that provides a complete set of tools to plan, develop, test, deliver, and monitor modern software solutions. It supports the entire software development lifecycle (SDLC) and promotes collaboration between development and operations teams.
 - ### 🚀 Key Services Provided by Azure DevOps
-- | **Service**        | **Description**                                                                                                                                         |
+-
+| **Service**        | **Description**                                                                                                                                         |
 |--------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Azure Boards**   | Work tracking system for managing projects using Agile, Scrum, or Kanban. Features: work items, backlogs, sprints, dashboards.                         |
 | **Azure Repos**    | Git repositories for version control. Supports pull requests, branching, code reviews.                                                                  |
