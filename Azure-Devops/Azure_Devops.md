@@ -1,5 +1,5 @@
 1. [Azure DevOps Fundamentals](#azure-devOps-fundamentals)
-- [2. Azure Repos (Git)](#2.-Azure-Repos-(Git))
+2. [Azure Repos (Git)](#Azure-Repos-(Git))
 
 
 
