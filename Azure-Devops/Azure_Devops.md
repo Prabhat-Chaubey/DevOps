@@ -164,3 +164,16 @@ Pipeline
         └── Steps
             └── Tasks
 
+
+
+### Triggers
+
+Azure DevOps supports multiple types of triggers to start pipelines based on specific events or schedules:
+
+| Trigger Type       | Description                                                | Example Usage                                  |
+|--------------------|------------------------------------------------------------|-------------------------------------------------|
+| **CI (Continuous Integration)** | Automatically runs the pipeline on code commits to specific branches | Run build when code is pushed to `main`        |
+| **PR (Pull Request)**          | Triggers pipeline on pull request creation or update targeting a branch | Run tests when a PR is opened/updated          |
+| **Scheduled**                  | Runs pipeline on a defined schedule (cron-like syntax)                  | Nightly builds, daily deployments              |
+| **Manual (Run Pipeline)**      | Triggered manually by a user from Azure DevOps UI                        | Hotfix deployments, ad-hoc testing             |
+
