@@ -113,3 +113,54 @@ Azure DevOps is a DevOps platform by Microsoft that provides a complete set of t
 ### ✅ Summary
 - **Build Pipeline** = CI → Validate and package your code.
 - **Release Pipeline** = CD → Deploy your artifacts to environments with control and approvals.
+
+
+## Stages,jobs,Steps,Tasks
+
+### 🏗️ 1. **Stage**
+- Logical boundary in the pipeline (e.g., Build, Test, Deploy)
+- Can contain one or more jobs
+- Often mapped to environments (Dev, QA, Prod)
+
+```yaml
+jobs:
+  - job: BuildJob
+    steps:
+      - script: echo Building...
+```
+###  👷 2. **Job**
+- Runs on an agent
+- Contains a sequence of steps
+- Can run in parallel or sequentially
+
+```yaml
+jobs:
+  - job: BuildJob
+    steps:
+      - script: echo Building...
+```
+### 🧩 3. **Step**
+- A single task or script that runs in a job
+- Steps are run sequentially inside a job
+  ```yaml
+  steps:
+  - script: echo Hello World
+  - task: CopyFiles@2
+  ```
+
+### 🛠️ 4. **Task**
+- A predefined action like copying files, publishing artifacts, running tests
+- Reusable and configurable
+   ```yaml
+   - task: PublishBuildArtifacts@1
+  inputs:
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'drop'
+   ```
+
+Pipeline
+└── Stages
+    └── Jobs
+        └── Steps
+            └── Tasks
+
