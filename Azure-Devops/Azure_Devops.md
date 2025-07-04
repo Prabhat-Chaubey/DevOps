@@ -73,7 +73,7 @@ Azure DevOps is a DevOps platform by Microsoft that provides a complete set of t
 ## Azure Pipelines CI CD
 -  [YAML vs CLassic Pipeline](#YAML-vs-CLassic-Pipeline)
 -  [Build Pipelines vs Release Pipelines](#Build-Pipelines-vs-Release-Pipelines)
--  [Stages,jobs,Steps,Tasks](#Stages,jobs,Steps,Tasks)
+-  [Stages jobs Steps Tasks](#Stages-jobs-Steps-Tasks)
 -  [Triggers](#Triggers)
 
 ### YAML vs CLassic Pipeline
@@ -115,7 +115,7 @@ Azure DevOps is a DevOps platform by Microsoft that provides a complete set of t
 - **Release Pipeline** = CD → Deploy your artifacts to environments with control and approvals.
 
 
-## Stages,jobs,Steps,Tasks
+## Stages jobs Steps Tasks
 
 ### 🏗️ 1. **Stage**
 - Logical boundary in the pipeline (e.g., Build, Test, Deploy)
