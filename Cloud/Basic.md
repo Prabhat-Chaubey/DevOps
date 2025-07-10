@@ -13,7 +13,10 @@
 11. [How is cloud billing typically calculated](#how-is-cloud-billing-typically-calculated)
 12. [What is serverless computing. Give an example](#what-is-serverless-computing-give-an-example)
 13. [How do you secure secrets like API keys in the cloud](#how-do-you-secure-secrets-like-api-keys-in-the-cloud)
-
+14. [What is the difference between vertical and horizontal scaling in cloud computing](#what-is-the-difference-between-vertical-and-horizontal-scaling-in-cloud-computing)
+15. [What is a cloud region vs an availability zone? Why do cloud providers separate them](#what-is-a-cloud-region-vs-an-availability-zone-why-do-cloud-providers-separate-them)
+16. [What is the shared responsibility model in cloud computing? Who is responsible for what](#what-is-the-shared-responsibility-model-in-cloud-computing-who-is-responsible-for-what)
+17. [What is cloud bursting and when would you use it](#what-is-cloud-bursting-and-when-would-you-use-it)
 
 
 
@@ -197,3 +200,40 @@ Storing API keys or passwords in plain text is risky. Instead, cloud platforms o
 | **GCP Secret Manager**             | Secure secret storage with IAM-based access                                |
 
 
+---
+### What is the difference between vertical and horizontal scaling in cloud computing
+- **Horizontal Scaling :**  Add more instances/machines to distribute the load (scale out/in).
+- **Vertical Scaling :** Increase the resources (CPU, RAM) of a single machine (scale up/down).
+---
+
+### What is a cloud region vs an availability zone? Why do cloud providers separate them
+|Term	|Description|
+|---------|---------|
+|Region	|A geographic area (like us-east-1 or Central India) that contains multiple data centers.|
+|Availability Zone|	A physically isolated data center (or group of centers) within a region, designed for fault isolation.|
+**Why are they separated?**
+- To ensure high availability and fault tolerance.
+- If one AZ fails (e.g., power outage), others in the same region can take over.
+
+---
+
+### What is the shared responsibility model in cloud computing? Who is responsible for what
+The Shared Responsibility Model defines who is responsible for what in cloud security:
+**🧠 Analogy:**
+Think of renting an apartment:
+  - The landlord (cloud provider) secures the building.
+  - You’re responsible for locking your apartment door (your data and applications).
+---
+
+### What is cloud bursting and When would you use it
+**Cloud Bursting** is when your private cloud or on-premises infrastructure is overwhelmed by **high demand**, and the extra workload **"bursts"** into the **public cloud** to handle the overflow.
+**💡 When is it used?**
+- For applications that normally run in a private data center, but need extra capacity during:
+  - Traffic spikes
+  - Seasonal usage (e.g., Black Friday, tax season)
+  - Special events
+
+**🧠 Analogy:**
+  - Think of a restaurant with 20 seats (private cloud).
+  - On a busy night, you rent extra chairs from a neighbor (public cloud) to seat more customers.
+---
