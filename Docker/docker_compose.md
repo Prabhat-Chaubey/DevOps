@@ -4,15 +4,16 @@ Docker Compose
 │
 ├── services           (Define each container/app)
 │   ├── web            (e.g., a Flask or Nginx service)
-│   │   ├── image/build
+│   │   ├── image / build
 │   │   ├── ports
 │   │   ├── volumes
 │   │   ├── depends_on
 │   │   └── environment
+│   │
 │   └── db             (e.g., MySQL/PostgreSQL)
 │       ├── image
 │       ├── volumes
-│       ├── environment
+│       └── environment
 │
 ├── volumes            (Define shared volumes)
 │
