@@ -18,18 +18,18 @@
 </pre>  
 
 **Infrastructe as a code is a way to initialize and configure resources in JSON and YAML fomrat.**
-`AWS` have thiers IAC tool named **"CLOUD FORMATION TEMPELATE"**
-`Azure` have thier IAC tool named **"Azure Resource Manager"(ARM Tempelate)**
-`Terraform` is like a universal tempelate , it takes only on eprovider and it makes the resource allocation easy
+- `AWS` have thiers IAC tool named **"CLOUD FORMATION TEMPELATE"**
+- `Azure` have thier IAC tool named **"Azure Resource Manager"(ARM Tempelate)**
+- `Terraform` is like a universal tempelate , it takes only on eprovider and it makes the resource allocation easy
 
 ### The code Terraform Workflow consists of three Stages:
 1.  Write
     - we write the `.tf` file.
 3.  Init
-   - we initialize the project using `terraform init` 
+     - we initialize the project using `terraform init` 
 5.  Plan
-  - we preview the changes using `terraform plan`
+    - we preview the changes using `terraform plan`
 6.  Apply
     - we create the infrastructe using `terrafrom apply`
 7.  Destroy
- - We destroy the insfrastructure using the `terraform destroy`
+     - We destroy the insfrastructure using the `terraform destroy`
