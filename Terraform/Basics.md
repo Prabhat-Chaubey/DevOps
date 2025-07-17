@@ -35,7 +35,7 @@ resource "aws_instance" "web_server" {
 
 
 - [What is a Terraform Module](#What-is-a-Terraform-Module)
-
+- [What is a Terraform Backend](#What_is-a-Terraform-Backend)
   
 **Infrastructe as a code is a way to initialize and configure resources in JSON and YAML fomrat.**
 - `AWS` have thiers IAC tool named **"CLOUD FORMATION TEMPELATE"**
@@ -68,3 +68,21 @@ A module is just a folder with these files:
 |variables.tf|	Defines what values the module expects (inputs)|
 |outputs.tf	|Defines what the module gives back after creation (outputs)|
 |versions.tf	(Optional)| Sets Terraform provider or required version|
+
+---
+
+### What is a Terraform Backend
+A Terraform backend is where Terraform stores its state file `(terraform.tfstate)`.
+**What is a State File?**
+- Terraform keeps track of the real-world infrastructure in a file called terraform.tfstate.
+- It records what resources exist, their properties, and how they map to your code.
+
+**Types of Terraform Backends (Common Examples)**
+| Backend Type   | Use Case / Description                                  |
+| -------------- | ------------------------------------------------------- |
+| `local`        | Default — stores state on your own machine.             |
+| `s3`           | Store state in AWS S3 (with optional DynamoDB locking). |
+| `azurerm`      | Stores state in Azure Blob Storage.                     |
+| `gcs`          | Google Cloud Storage backend.                           |
+| `consul`       | Used in HashiCorp's ecosystem.                          |
+| `remote` (HCP) | Terraform Cloud or Enterprise — built-in collaboration. |
