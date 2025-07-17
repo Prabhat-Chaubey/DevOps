@@ -35,6 +35,8 @@ resource "aws_instance" "web_server" {
 
 
 - [What is a Terraform Module](#What-is-a-Terraform-Module)
+
+  
 **Infrastructe as a code is a way to initialize and configure resources in JSON and YAML fomrat.**
 - `AWS` have thiers IAC tool named **"CLOUD FORMATION TEMPELATE"**
 - `Azure` have thier IAC tool named **"Azure Resource Manager"(ARM Tempelate)**
