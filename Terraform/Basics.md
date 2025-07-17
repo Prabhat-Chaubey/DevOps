@@ -17,6 +17,21 @@
 
 </pre>  
 
+<pre>
+  provider "aws" {
+  region = var.aws_region
+}
+
+resource "aws_instance" "web_server" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+
+  tags = {
+    Name = "Terraform-Example-Instance"
+  }
+}
+
+</pre>
 **Infrastructe as a code is a way to initialize and configure resources in JSON and YAML fomrat.**
 - `AWS` have thiers IAC tool named **"CLOUD FORMATION TEMPELATE"**
 - `Azure` have thier IAC tool named **"Azure Resource Manager"(ARM Tempelate)**
@@ -33,3 +48,4 @@
     - we create the infrastructe using `terrafrom apply`
 7.  Destroy
      - We destroy the insfrastructure using the `terraform destroy`
+
