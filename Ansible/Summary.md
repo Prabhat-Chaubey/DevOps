@@ -23,8 +23,8 @@ While Ansible and Terraform both serve automation purposes in DevOps, they serve
 Focus Topics:
 - [Agentless communication over SSH (or WinRM)](#Agentless-communication-over-SSH)
 - [Inventory , static and dynamic and host patterns](#Inventory-,-static-and-dynamic-and-host-patterns)
-- [Modules (packaged, custom) as units of work](#Modules-(packaged,-custom)-as-units-of-work)
-- [Idempotence: safe repeated executions](#Idempotence:-safe-repeated-executions)
+- [Modules (packaged, custom) as units of work](#Modules-packaged-custom-as-units-of-work)
+- [Idempotence: safe repeated executions](#Idempotence-safe-repeated-executions)
 
   #### Agentless communication over SSH
 
@@ -65,11 +65,11 @@ Dynamic inventory retrieves host and group information at runtime from external 
 **Host Patterns**
 Host patterns are flexible expressions that let you run commands and playbooks against specific hosts and/or groups in your inventory. They determine which managed nodes Ansible targets during execution.
 
-#### Modules (packaged, custom) as units of work
+#### Modules packaged custom as units of work
 In Ansible, modules are the fundamental units of work—standalone scripts or programs that execute discrete tasks on managed hosts or via APIs. Ansible provides a rich library of packaged modules maintained within Ansible Core and Collections, while also allowing you to write custom modules in any language to address use cases not covered by built-in functionality.
 Modules and plays serve distinct but complementary roles in Ansible:
 -  Use modules to define individual actions.
 -  Use plays (in playbooks) to group and orchestrate those actions into end-to-end automation against target hosts.
 
-#### Idempotence: safe repeated executions
+#### Idempotence safe repeated executions
 Idempotence ensures that running the same Ansible task or playbook multiple times leaves the target system in the same desired state without unintended side effects.
